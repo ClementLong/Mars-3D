@@ -1,0 +1,22 @@
+{
+  "name": "project_mars",
+  "version": "1.0.0",
+  "description": "A dev front project for Hetic",
+  "main": "index.html",
+  "scripts": {
+    "start": "gulp watch",
+    "test": "test"
+  },
+  "author": "Clément Long",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.13.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-ruby-sass": "^2.1.0"
+  },
+  "dependencies": {
+    "three": "^0.81.2"
+  }
+}
