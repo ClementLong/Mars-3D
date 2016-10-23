@@ -9,7 +9,7 @@ gulp.task('babel', () => {
     .pipe(babel({
       presets: ['es2015']
     }))
-    .pipe(gulp.dest('asset'));
+    .pipe(gulp.dest('assets'))
 });
 
 // Sass ♥️
@@ -20,7 +20,7 @@ gulp.task('sass', () => {
         browsers: ['> 1%'],
         cascade: false
     }))
-    .pipe(gulp.dest('asset'))
+    .pipe(gulp.dest('assets'))
 });
 
 // Watch

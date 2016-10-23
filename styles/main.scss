@@ -1,3 +1,6 @@
-body {
-  background-color: #333;
-}
+@import 'color';
+@import 'reset';
+@import 'font';
+@import 'ui';
+@import 'header';
+@import 'footer';
