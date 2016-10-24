@@ -2,12 +2,17 @@ const gulp = require('gulp');
 const babel = require('gulp-babel');
 const sass = require('gulp-ruby-sass');
 const autoprefixer = require('gulp-autoprefixer');
+const browserify = require('gulp-browserify');
 
-// Babel ♥️
+// Babel ♥️ & Browserify
 gulp.task('babel', () => {
   return gulp.src('scripts/*.js')
     .pipe(babel({
       presets: ['es2015']
+    }))
+    .pipe(browserify({
+      insertGlobals : true,
+      debug : !gulp.env.production
     }))
     .pipe(gulp.dest('assets'))
 });
