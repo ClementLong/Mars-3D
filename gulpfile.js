@@ -6,32 +6,32 @@ const browserify = require('gulp-browserify');
 
 // Babel ♥️ & Browserify
 gulp.task('babel', () => {
-  return gulp.src('scripts/*.js')
+  return gulp.src('app/scripts/*.js')
     .pipe(babel({
       presets: ['es2015']
     }))
     .pipe(browserify({
       insertGlobals : true,
-      debug : !gulp.env.production
+      // debug : !gulp.env.production
     }))
-    .pipe(gulp.dest('assets'))
+    .pipe(gulp.dest('app/dist'))
 });
 
 // Sass ♥️
 gulp.task('sass', () => {
-  sass('styles/*.scss')
+  sass('app/styles/*.scss')
     .on('error', sass.logError)
     .pipe(autoprefixer({
         browsers: ['> 1%'],
         cascade: false
     }))
-    .pipe(gulp.dest('assets'))
+    .pipe(gulp.dest('app/dist'))
 });
 
 // Watch
 gulp.task('watch', function () {
-  gulp.watch('styles/*.scss', ['sass']);
-  gulp.watch('scripts/*.js', ['babel']);
+  gulp.watch('app/styles/*.scss', ['sass']);
+  gulp.watch('app/scripts/*.js', ['babel']);
 });
 
 // Dev
