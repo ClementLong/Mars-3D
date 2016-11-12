@@ -11,8 +11,7 @@ gulp.task('babel', () => {
       presets: ['es2015']
     }))
     .pipe(browserify({
-      insertGlobals : true,
-      // debug : !gulp.env.production
+      insertGlobals : true
     }))
     .pipe(gulp.dest('app/dist'))
 });
