@@ -2,114 +2,94 @@
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 'use strict';
 
-var Navigation = require('./navigation.js');
-var Planet = require('./planet.js');
-}).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_9bca6b79.js","/")
-},{"./navigation.js":2,"./planet.js":3,"buffer":4,"oMfpAn":7}],2:[function(require,module,exports){
-(function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
-const nav = {}
-
-nav.beginButton = document.querySelector('.begin')
-nav.next = document.querySelector('.next')
-
-nav.init = () => {
-
-}
-
-nav.init();
-
-}).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/navigation.js","/")
-},{"buffer":4,"oMfpAn":7}],3:[function(require,module,exports){
-(function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
-const planet = {}
+var planet = {};
 
 // initPlanet
 // @Params : 
 //
 //
-planet.initPlanet = () => {
+planet.initPlanet = function () {
   // Load Three.js
-  const THREE = require('three')
+  var THREE = require('three');
 
   // Init scene & camera
-  const scene = new THREE.Scene()
-  const camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 )
-  camera.position.z = 5
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  camera.position.z = 5;
 
   //Light
-  scene.add( new THREE.HemisphereLight( 0x443333, 0x111122 ) )
+  scene.add(new THREE.HemisphereLight(0x443333, 0x111122));
 
-  const spotLight = new THREE.SpotLight( 0xffffbb, 1.3 )
-  spotLight.position.set( 0.5, 0, 2 )
-  spotLight.position.multiplyScalar( 700 )
-  scene.add( spotLight )
+  var spotLight = new THREE.SpotLight(0xffffbb, 1.3);
+  spotLight.position.set(0.5, 0, 2);
+  spotLight.position.multiplyScalar(700);
+  scene.add(spotLight);
 
-  spotLight.castShadow = true
+  spotLight.castShadow = true;
 
-  spotLight.shadow.mapSize.width = 2048
-  spotLight.shadow.mapSize.height = 2048
+  spotLight.shadow.mapSize.width = 2048;
+  spotLight.shadow.mapSize.height = 2048;
 
-  spotLight.shadow.camera.near = 200
-  spotLight.shadow.camera.far = 200
+  spotLight.shadow.camera.near = 200;
+  spotLight.shadow.camera.far = 200;
 
-  spotLight.shadow.camera.fov = 40
+  spotLight.shadow.camera.fov = 40;
 
-  spotLight.shadow.bias = -0.005
+  spotLight.shadow.bias = -0.005;
 
   // Type & where render
-  const renderer = new THREE.WebGLRenderer()
-  renderer.setSize( window.innerWidth, window.innerHeight )
-  document.querySelector('.planet').appendChild( renderer.domElement )
+  var renderer = new THREE.WebGLRenderer();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  document.querySelector('.planet').appendChild(renderer.domElement);
 
   // TextureLoader
-  const the_map = new THREE.TextureLoader().load('./images/mars_1k_color.jpg')
-  const bmap = new THREE.TextureLoader().load('./images/mars_1k_topo.jpg')
+  var the_map = new THREE.TextureLoader().load('./images/mars_1k_color.jpg');
+  var bmap = new THREE.TextureLoader().load('./images/mars_1k_topo.jpg');
 
-  const geometry  = new THREE.SphereGeometry(2, 32, 32)
-  const material  = new THREE.MeshPhongMaterial({
-    map : the_map,
+  var geometry = new THREE.SphereGeometry(2, 32, 32);
+  var material = new THREE.MeshPhongMaterial({
+    map: the_map,
     specular: 0x222222,
     shininess: 10,
-    bumpMap : bmap,
-    bumpScale	: 0.02
+    bumpMap: bmap,
+    bumpScale: 0.02
     // specularMap	: THREE.ImageUtils.loadTexture(THREEx.Planets.baseURL+'images/earthspec1k.jpg'),
     // specular	: new THREE.Color('grey'),
-  })
+  });
 
-  const marsMesh = new THREE.Mesh(geometry, material)
-  scene.add(marsMesh)
+  var marsMesh = new THREE.Mesh(geometry, material);
+  scene.add(marsMesh);
 
-  const mouse = {}
-  mouse.variation = 0.005
+  var mouse = {};
+  mouse.variation = 0.005;
 
-  const render = () => {
-    requestAnimationFrame( render )
+  var render = function render() {
+    requestAnimationFrame(render);
 
     // marsMesh.rotation.y += 0.005
-    marsMesh.rotation.y += mouse.variation
+    marsMesh.rotation.y += mouse.variation;
     // cube.rotation.x += 0.1
     // cube.rotation.y += 0.1
 
-    renderer.render(scene, camera)
-  }
+    renderer.render(scene, camera);
+  };
 
-  render()
+  render();
 
-  const planetButton = document.querySelector('.planet')
+  var planetButton = document.querySelector('.planet');
 
-  const mouseEvent = planetButton.addEventListener('mousemove', (e) => {
-    if((window.outerWidth/2) < e.clientX) {
-      mouse.variation = 0.005
+  var mouseEvent = planetButton.addEventListener('mousemove', function (e) {
+    if (window.outerWidth / 2 < e.clientX) {
+      mouse.variation = 0.005;
     } else {
-      mouse.variation = -0.005
+      mouse.variation = -0.005;
     }
-  })
-}
+  });
+};
 
-planet.initPlanet()
-
-}).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/planet.js","/")
-},{"buffer":4,"oMfpAn":7,"three":8}],4:[function(require,module,exports){
+planet.initPlanet();
+}).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_734877be.js","/")
+},{"buffer":2,"oMfpAn":5,"three":6}],2:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 /*!
  * The buffer module from node.js, for the browser.
@@ -1222,7 +1202,7 @@ function assert (test, message) {
 }
 
 }).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/../../node_modules/gulp-browserify/node_modules/browserify/node_modules/buffer/index.js","/../../node_modules/gulp-browserify/node_modules/browserify/node_modules/buffer")
-},{"base64-js":5,"buffer":4,"ieee754":6,"oMfpAn":7}],5:[function(require,module,exports){
+},{"base64-js":3,"buffer":2,"ieee754":4,"oMfpAn":5}],3:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 
@@ -1350,7 +1330,7 @@ var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 }(typeof exports === 'undefined' ? (this.base64js = {}) : exports))
 
 }).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/../../node_modules/gulp-browserify/node_modules/browserify/node_modules/buffer/node_modules/base64-js/lib/b64.js","/../../node_modules/gulp-browserify/node_modules/browserify/node_modules/buffer/node_modules/base64-js/lib")
-},{"buffer":4,"oMfpAn":7}],6:[function(require,module,exports){
+},{"buffer":2,"oMfpAn":5}],4:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
@@ -1438,7 +1418,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 }
 
 }).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/../../node_modules/gulp-browserify/node_modules/browserify/node_modules/buffer/node_modules/ieee754/index.js","/../../node_modules/gulp-browserify/node_modules/browserify/node_modules/buffer/node_modules/ieee754")
-},{"buffer":4,"oMfpAn":7}],7:[function(require,module,exports){
+},{"buffer":2,"oMfpAn":5}],5:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 // shim for using process in browser
 
@@ -1505,7 +1485,7 @@ process.chdir = function (dir) {
 };
 
 }).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/../../node_modules/gulp-browserify/node_modules/browserify/node_modules/process/browser.js","/../../node_modules/gulp-browserify/node_modules/browserify/node_modules/process")
-},{"buffer":4,"oMfpAn":7}],8:[function(require,module,exports){
+},{"buffer":2,"oMfpAn":5}],6:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
@@ -43300,4 +43280,4 @@ process.chdir = function (dir) {
 
 })));
 }).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/../../node_modules/three/build/three.js","/../../node_modules/three/build")
-},{"buffer":4,"oMfpAn":7}]},{},[1])
+},{"buffer":2,"oMfpAn":5}]},{},[1])

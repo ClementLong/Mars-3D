@@ -6,10 +6,10 @@
 //   color: $color;
 // }
 //
-// @mixin lora($size, $weight, $color) {
-//   font-family: 'Lora', sans-serif;
-//   font-size: $size;
-//   font-weight: $weight;
-//   text-decoration: none;
-//   color: $color;
-// }
+@mixin mainFont($size, $weight, $color) {
+  font-family: 'Elvetica', sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+  text-decoration: none;
+  color: $color;
+}
