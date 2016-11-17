@@ -1,9 +1,5 @@
 const planet = {}
 
-// initPlanet
-// @Params : 
-//
-//
 planet.initPlanet = () => {
   // Load Three.js
   const THREE = require('three')
@@ -26,10 +22,10 @@ planet.initPlanet = () => {
   spotLight.shadow.mapSize.width = 2048
   spotLight.shadow.mapSize.height = 2048
 
-  spotLight.shadow.camera.near = 200
-  spotLight.shadow.camera.far = 200
+  spotLight.shadow.camera.near = 500
+  spotLight.shadow.camera.far = 500
 
-  spotLight.shadow.camera.fov = 40
+  spotLight.shadow.camera.fov = 200
 
   spotLight.shadow.bias = -0.005
 
@@ -41,7 +37,6 @@ planet.initPlanet = () => {
   // TextureLoader
   const the_map = new THREE.TextureLoader().load('./images/mars_1k_color.jpg')
   const bmap = new THREE.TextureLoader().load('./images/mars_1k_topo.jpg')
-
   const geometry  = new THREE.SphereGeometry(2, 32, 32)
   const material  = new THREE.MeshPhongMaterial({
     map : the_map,
@@ -55,6 +50,19 @@ planet.initPlanet = () => {
 
   const marsMesh = new THREE.Mesh(geometry, material)
   scene.add(marsMesh)
+
+  const the_map2 = new THREE.TextureLoader().load('./images/cloudmap.jpg')
+  const geometry2  = new THREE.SphereGeometry(0.51, 32, 32)
+  const material2  = new THREE.MeshPhongMaterial({
+    map         : the_map2,
+    side        : THREE.DoubleSide,
+    opacity     : 0.8,
+    transparent : true,
+    depthWrite  : false,
+  })
+  const cloudMesh = new THREE.Mesh(geometry2, material2)
+  marsMesh.add(cloudMesh)
+
 
   const mouse = {}
   mouse.variation = 0.005
@@ -75,12 +83,13 @@ planet.initPlanet = () => {
   const planetButton = document.querySelector('.planet')
 
   const mouseEvent = planetButton.addEventListener('mousemove', (e) => {
-    if((window.outerWidth/2) < e.clientX) {
+    if((window.innerWidth/2) < e.clientX) {
       mouse.variation = 0.005
     } else {
       mouse.variation = -0.005
     }
   })
+
 }
 
 planet.initPlanet()

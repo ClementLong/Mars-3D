@@ -9,43 +9,43 @@
   justify-content: center;
   align-items: stretch;
   text-align: center;
+}
 
-  .introduction__title {
-    @include mainFont(100px, 400, $white);
-    text-transform: uppercase;
-    padding: 0 40px;
-  }
+.introduction__title {
+  @include mainFont(100px, 400, $white);
+  text-transform: uppercase;
+  padding: 0 40px;
+}
 
-  .introduction__subtitle {
-    @include mainFont(40px, 400, $white);
-    text-transform: uppercase;
-    padding: 0 0 60px 0;
-  }
+.introduction__subtitle {
+  @include mainFont(40px, 400, $white);
+  text-transform: uppercase;
+  padding: 0 0 60px 0;
+}
 
-  .introduction__desciption {
-    background-color: $secondaryBackground;
-    width: 400px;
-    position: relative;
-    left: -400px;
-    padding: 50px 50px 50px 5px;
-    padding-left: calc(50% + 50px);
-    transform: skewX(-60deg);
-    text-align: left;
-  }
+.introduction__desciption {
+  background-color: $secondaryBackground;
+  width: 400px;
+  position: relative;
+  left: -400px;
+  padding: 50px 50px 50px 5px;
+  padding-left: calc(50% + 50px);
+  transform: skewX(-60deg);
+  text-align: left;
+}
 
-  .introduction__desciption-title {
-    @include mainFont(30px, 400, $white);
-    text-transform: uppercase;
-    border-bottom: 4px solid $red;
-    transform: skewX(60deg);
-    padding-bottom: -5px;
-  }
+.introduction__desciption-title {
+  @include mainFont(30px, 400, $white);
+  text-transform: uppercase;
+  border-bottom: 4px solid $red;
+  transform: skewX(60deg);
+  padding-bottom: -5px;
+}
 
-  .introduction__desciption-text {
-    transform: skewX(60deg);
-  }
+.introduction__desciption-text {
+  transform: skewX(60deg);
+}
 
-  .introduction__action {
-    @include mainFont(30px, 400, $white);
-  }
+.introduction__action {
+  @include mainFont(30px, 400, $white);
 }
