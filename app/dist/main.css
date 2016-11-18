@@ -61,11 +61,11 @@ a:hover {
 a:focus, a:active {
   text-decoration: none; }
 
-.introduction {
+.intro {
   width: 100%;
   height: 100vh;
-  background-color: #1C1D2A;
-  font-family: 'Elvetica', sans-serif;
+  background-color: #1c1d2a;
+  font-family: 'Helvetica', sans-serif;
   font-size: 15px;
   font-weight: 400;
   text-decoration: none;
@@ -81,49 +81,47 @@ a:focus, a:active {
   -webkit-box-align: stretch;
   align-items: stretch;
   text-align: center; }
-  .introduction .introduction__title {
-    font-family: 'Elvetica', sans-serif;
-    font-size: 100px;
-    font-weight: 400;
-    text-decoration: none;
-    color: #ffffff;
-    text-transform: uppercase;
-    padding: 0 40px; }
-  .introduction .introduction__subtitle {
-    font-family: 'Elvetica', sans-serif;
-    font-size: 40px;
-    font-weight: 400;
-    text-decoration: none;
-    color: #ffffff;
-    text-transform: uppercase;
-    padding: 0 0 60px 0; }
-  .introduction .introduction__desciption {
-    background-color: #3C3D48;
-    width: 400px;
-    position: relative;
-    left: -400px;
-    padding: 50px 50px 50px 5px;
-    padding-left: calc(50% + 50px);
-    -webkit-transform: skewX(-60deg);
-    transform: skewX(-60deg);
-    text-align: left; }
-  .introduction .introduction__desciption-title {
-    font-family: 'Elvetica', sans-serif;
-    font-size: 30px;
-    font-weight: 400;
-    text-decoration: none;
-    color: #ffffff;
-    text-transform: uppercase;
-    border-bottom: 4px solid #BE2935;
-    -webkit-transform: skewX(60deg);
-    transform: skewX(60deg);
-    padding-bottom: -5px; }
-  .introduction .introduction__desciption-text {
-    -webkit-transform: skewX(60deg);
-    transform: skewX(60deg); }
-  .introduction .introduction__action {
-    font-family: 'Elvetica', sans-serif;
-    font-size: 30px;
-    font-weight: 400;
-    text-decoration: none;
-    color: #ffffff; }
+
+.intro__title {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 100px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 0 40px; }
+
+.intro__subtitle {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 0 0 60px 0; }
+
+.intro__description {
+  background-color: #3c3d48;
+  width: 400px;
+  position: relative;
+  left: -400px;
+  padding: 50px 50px 50px 5px;
+  padding-left: calc(50% + 50px);
+  text-align: left; }
+
+.intro__descriptionTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #ffffff;
+  text-transform: uppercase;
+  border-bottom: 4px solid #be2935;
+  padding-bottom: -5px; }
+
+.intro__action {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #ffffff; }
