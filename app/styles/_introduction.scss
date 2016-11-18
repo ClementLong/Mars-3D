@@ -1,8 +1,6 @@
 .intro {
-  width: 100%;
   height: 100vh;
-  background-color: $background;
-  @include mainFont(15px, 400, #ffffff);
+
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -12,40 +10,40 @@
 }
 
 .intro__title {
-  @include mainFont(100px, 400, #ffffff);
+  @include sectionTitle();
+
   text-transform: uppercase;
-  padding: 0 40px;
+
+  @include adapt(1080px) {
+    @include sectionTitle(112px);
+  }
 }
 
 .intro__subtitle {
-  @include mainFont(40px, 400, #ffffff);
+  @include sectionSubtitle();
+
   text-transform: uppercase;
-  padding: 0 0 60px 0;
+
+  @include adapt(1080px) {
+    @include sectionSubtitle(24px);
+  }
 }
 
 .intro__description {
-  background-color: $secondaryBackground;
-  width: 400px;
-  position: relative;
-  left: -400px;
-  padding: 50px 50px 50px 5px;
-  padding-left: calc(50% + 50px);
+  // background-color: $secondaryBackground;
 
-  text-align: left;
+  position: relative;
+  text-align: justify;
 }
 
 .intro__descriptionTitle {
-  @include mainFont(30px, 400, #ffffff);
-  text-transform: uppercase;
-  border-bottom: 4px solid $brandPrimary;
+  @include paragraphTitle();
 
-  padding-bottom: -5px;
+  @include adapt(1080px) {
+    @include paragraphTitle(24px);
+  }
 }
 
-.intro__desciptionText {
-
-}
-
-.intro__action {
-  @include mainFont(30px, 400, #ffffff);
+.intro__descriptionText {
+  @include paragraphText();
 }

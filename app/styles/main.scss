@@ -1,3 +1,9 @@
+@mixin adapt($media) {
+  @media (min-width: #{$media}) {
+    @content;
+  }
+}
+
 @import 'color';
 @import 'reset';
 @import 'font';
@@ -5,3 +11,7 @@
 @import 'footer';
 @import 'introduction';
 @import 'planet';
+
+section.intro {
+  padding: 0 25px;
+}
