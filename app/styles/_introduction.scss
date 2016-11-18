@@ -1,8 +1,8 @@
-.introduction {
+.intro {
   width: 100%;
   height: 100vh;
   background-color: $background;
-  @include mainFont(15px, 400, $white);
+  @include mainFont(15px, 400, #ffffff);
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -11,41 +11,41 @@
   text-align: center;
 }
 
-.introduction__title {
-  @include mainFont(100px, 400, $white);
+.intro__title {
+  @include mainFont(100px, 400, #ffffff);
   text-transform: uppercase;
   padding: 0 40px;
 }
 
-.introduction__subtitle {
-  @include mainFont(40px, 400, $white);
+.intro__subtitle {
+  @include mainFont(40px, 400, #ffffff);
   text-transform: uppercase;
   padding: 0 0 60px 0;
 }
 
-.introduction__desciption {
+.intro__description {
   background-color: $secondaryBackground;
   width: 400px;
   position: relative;
   left: -400px;
   padding: 50px 50px 50px 5px;
   padding-left: calc(50% + 50px);
-  transform: skewX(-60deg);
+
   text-align: left;
 }
 
-.introduction__desciption-title {
-  @include mainFont(30px, 400, $white);
+.intro__descriptionTitle {
+  @include mainFont(30px, 400, #ffffff);
   text-transform: uppercase;
-  border-bottom: 4px solid $red;
-  transform: skewX(60deg);
+  border-bottom: 4px solid $brandPrimary;
+
   padding-bottom: -5px;
 }
 
-.introduction__desciption-text {
-  transform: skewX(60deg);
+.intro__desciptionText {
+
 }
 
-.introduction__action {
-  @include mainFont(30px, 400, $white);
+.intro__action {
+  @include mainFont(30px, 400, #ffffff);
 }
