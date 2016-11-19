@@ -8,7 +8,6 @@
   justify-content: center;
   align-items: stretch;
   text-align: center;
-  overflow: hidden;
 }
 
 .intro__title {
@@ -134,7 +133,7 @@
     height: 100%;
     width: 100%;
     // background-color: $brandPrimary;
-    background-image: url('../images/mars.png');
+    // background-image: url('../images/mars.png');
     background-size: cover;
   }
 

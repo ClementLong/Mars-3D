@@ -30,6 +30,17 @@
     font-style: normal;
 }
 
+@font-face {
+  font-family: 'icomooon';
+  src:  url('../fonts/icomoon.eot?25vay7');
+  src:  url('../fonts/icomoon.eot?25vay7#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?25vay7') format('truetype'),
+    url('../fonts/icomoon.woff?25vay7') format('woff'),
+    url('../fonts/icomoon.svg?25vay7#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @mixin sectionTitle($size: 72px, $color: #fff) {
   margin-bottom: 0.1em;
   color: $color;

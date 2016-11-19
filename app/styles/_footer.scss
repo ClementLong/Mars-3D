@@ -1,3 +1,37 @@
 .footer {
+  background-color: $secondaryBackground;
+
+  ul {
+    text-align: center;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    display: inline-block;
+    padding: 15px 50px;
+  }
+
+  .icon {
+    color: #fff;
+    font-family: "icomooon";
+    font-size: 20px;
+    position: relative;
+
+    &.twitter:before {
+      content: "\e100";
+    }
+    &.youtube:before {
+      content: "\e200";
+    }
+    &.instagram:before {
+      content: "\e300";
+    }
+    &.github:before {
+      content: "\e400";
+    }
+  }
 
 }

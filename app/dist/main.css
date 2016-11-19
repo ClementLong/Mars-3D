@@ -81,6 +81,12 @@ a:focus, a:active {
   src: url("../fonts/ailerons-typeface-webfont.woff2") format("woff2"), url("../fonts/ailerons-typeface-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
+@font-face {
+  font-family: 'icomooon';
+  src: url("../fonts/icomoon.eot?25vay7");
+  src: url("../fonts/icomoon.eot?25vay7#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?25vay7") format("truetype"), url("../fonts/icomoon.woff?25vay7") format("woff"), url("../fonts/icomoon.svg?25vay7#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 body {
   background-color: #1c1d2a;
   font-size: 16px;
@@ -104,6 +110,29 @@ a {
     background-color: #be2935;
     border-radius: 100px; }
 
+.footer {
+  background-color: #3c3d48; }
+  .footer ul {
+    text-align: center; }
+  .footer li {
+    display: inline-block; }
+  .footer a {
+    display: inline-block;
+    padding: 15px 50px; }
+  .footer .icon {
+    color: #fff;
+    font-family: "icomooon";
+    font-size: 20px;
+    position: relative; }
+    .footer .icon.twitter:before {
+      content: "\e100"; }
+    .footer .icon.youtube:before {
+      content: "\e200"; }
+    .footer .icon.instagram:before {
+      content: "\e300"; }
+    .footer .icon.github:before {
+      content: "\e400"; }
+
 .intro {
   padding-top: 20px;
   min-height: 100vh;
@@ -117,8 +146,7 @@ a {
   justify-content: center;
   -webkit-box-align: stretch;
   align-items: stretch;
-  text-align: center;
-  overflow: hidden; }
+  text-align: center; }
 
 .intro__title {
   margin-bottom: 0.1em;
@@ -254,7 +282,6 @@ a {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-image: url("../images/mars.png");
     background-size: cover; }
   @media (min-width: 1080px) {
     .intro__mars {
