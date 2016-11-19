@@ -1,7 +1,7 @@
 .header {
   padding-top: 20px;
   text-align: center;
-  
+
   .header__title {
     @include sectionTitle();
     padding: 0 20px;
