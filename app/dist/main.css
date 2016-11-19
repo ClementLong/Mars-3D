@@ -90,8 +90,23 @@ body {
 a {
   color: inherit; }
 
+.btn, .intro__btn {
+  margin: 30px 0 80px 0;
+  display: inline-block; }
+  .btn a, .intro__btn a {
+    position: relative;
+    display: inline-block;
+    padding: 1em 5em;
+    color: #fff;
+    font-family: 'montserratMedium';
+    letter-spacing: 0.125em;
+    text-transform: uppercase;
+    background-color: #be2935;
+    border-radius: 100px; }
+
 .intro {
-  height: 100vh;
+  padding-top: 20px;
+  min-height: 100vh;
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: vertical;
@@ -102,7 +117,8 @@ a {
   justify-content: center;
   -webkit-box-align: stretch;
   align-items: stretch;
-  text-align: center; }
+  text-align: center;
+  overflow: hidden; }
 
 .intro__title {
   margin-bottom: 0.1em;
@@ -112,6 +128,7 @@ a {
   letter-spacing: -0.12em;
   text-transform: uppercase;
   line-height: 1em;
+  padding: 0 20px;
   text-transform: uppercase; }
   @media (min-width: 1080px) {
     .intro__title {
@@ -121,7 +138,8 @@ a {
       font-size: 112px;
       letter-spacing: -0.12em;
       text-transform: uppercase;
-      line-height: 1em; } }
+      line-height: 1em;
+      padding: 0; } }
 
 .intro__subtitle {
   margin-bottom: 2em;
@@ -131,6 +149,7 @@ a {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   line-height: 1.2em;
+  padding: 0 20px;
   text-transform: uppercase; }
   @media (min-width: 1080px) {
     .intro__subtitle {
@@ -140,20 +159,52 @@ a {
       font-size: 24px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      line-height: 1.2em; } }
+      line-height: 1.2em;
+      padding: 0; } }
+
+@media (min-width: 1080px) {
+  .intro__infos {
+    width: 40%; } }
 
 .intro__description {
-  position: relative;
-  text-align: justify; }
+  position: relative; }
+  @media (min-width: 1080px) {
+    .intro__description {
+      width: 100%;
+      padding: 50px 150px 70px 60px;
+      background-color: #3c3d48; }
+      .intro__description::after {
+        content: '';
+        height: 100%;
+        width: 200px;
+        background-color: #1c1d2a;
+        position: absolute;
+        top: 0px;
+        right: -125px;
+        -webkit-transform: skewX(-20deg);
+        transform: skewX(-20deg); } }
 
 .intro__descriptionTitle {
+  display: block;
+  position: relative;
+  z-index: 0;
   margin-bottom: 0.8em;
   color: #fff;
   font-family: 'montserratMedium';
   font-size: 20px;
   letter-spacing: 0.125em;
   text-transform: uppercase;
-  line-height: 1.4em; }
+  line-height: 1.4em;
+  padding: 0 20px; }
+  .intro__descriptionTitle::before {
+    content: '';
+    height: 10px;
+    width: 100%;
+    z-index: -5;
+    background-color: #be2935;
+    position: absolute;
+    bottom: 4px;
+    left: 0px; }
   @media (min-width: 1080px) {
     .intro__descriptionTitle {
       margin-bottom: 0.8em;
@@ -162,14 +213,59 @@ a {
       font-size: 24px;
       letter-spacing: 0.125em;
       text-transform: uppercase;
-      line-height: 1.4em; } }
+      line-height: 1.4em;
+      text-align: left;
+      padding: 0; }
+      .intro__descriptionTitle::before {
+        bottom: 2px; } }
 
 .intro__descriptionText {
   color: #fff;
   font-family: 'andalemonoRegular', monospace;
   font-size: 16px;
   letter-spacing: -0.08em;
-  line-height: 1.4em; }
+  line-height: 1.5em;
+  padding: 0 20px;
+  text-align: justify; }
+  @media (min-width: 1080px) {
+    .intro__descriptionText {
+      padding: 0; } }
 
-section.intro {
-  padding: 0 25px; }
+.intro__btn a::after {
+  content: '';
+  height: 2.6em;
+  width: 2.6em;
+  background-color: #3c3d48;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0.4em;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+.intro__mars {
+  position: relative;
+  height: 200px;
+  overflow: hidden; }
+  .intro__mars::after {
+    content: '';
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url("../images/mars.png");
+    background-size: cover; }
+  @media (min-width: 1080px) {
+    .intro__mars {
+      position: absolute;
+      bottom: 0;
+      right: 0px;
+      height: 800px;
+      width: 800px; }
+      .intro__mars::after {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        -webkit-transform: translate(200px, 200px);
+        transform: translate(200px, 200px); } }

@@ -1,5 +1,6 @@
 .intro {
-  height: 100vh;
+  padding-top: 20px;
+  min-height: 100vh;
 
   display: flex;
   flex-direction: column;
@@ -7,43 +8,149 @@
   justify-content: center;
   align-items: stretch;
   text-align: center;
+  overflow: hidden;
 }
 
 .intro__title {
   @include sectionTitle();
+  padding: 0 20px;
 
   text-transform: uppercase;
 
   @include adapt(1080px) {
     @include sectionTitle(112px);
+    padding: 0;
   }
 }
 
 .intro__subtitle {
   @include sectionSubtitle();
+  padding: 0 20px;
 
   text-transform: uppercase;
 
   @include adapt(1080px) {
     @include sectionSubtitle(24px);
+    padding: 0;
+  }
+}
+
+.intro__infos {
+  @include adapt(1080px) {
+    width: 40%;
   }
 }
 
 .intro__description {
-  // background-color: $secondaryBackground;
-
   position: relative;
-  text-align: justify;
-}
 
+  @include adapt(1080px) {
+    width: 100%;
+    padding: 50px 150px 70px 60px;
+    background-color: $secondaryBackground;
+
+    &::after {
+      content: '';
+      height: 100%;
+      width: 200px;
+      background-color: $background;
+
+      position: absolute;
+      top: 0px;
+      right: -125px;
+
+      transform: skewX(-20deg);
+    }
+  }
+}
 .intro__descriptionTitle {
+  display: block;
+  position: relative;
+  z-index: 0;
   @include paragraphTitle();
+  padding: 0 20px;
+
+  &::before {
+    content: '';
+    height: 10px;
+    width: 100%;
+    z-index: -5;
+    background-color: $brandPrimary;
+
+    position: absolute;
+    bottom: 4px;
+    left: 0px;
+  }
 
   @include adapt(1080px) {
     @include paragraphTitle(24px);
+    text-align: left;
+    padding: 0;
+
+    &::before {
+      bottom: 2px;
+    }
   }
 }
 
 .intro__descriptionText {
   @include paragraphText();
+  padding: 0 20px;
+  text-align: justify;
+
+  @include adapt(1080px) {
+    padding: 0;
+  }
+}
+
+.intro__btn {
+  @extend .btn;
+
+  a::after {
+    content: '';
+    height: 2.6em;
+    width: 2.6em;
+    background-color: $secondaryBackground;
+    border-radius: 100%;
+
+    position: absolute;
+    top: 50%;
+    left: 0.4em;
+
+    transform: translateY(-50%);
+  }
+}
+
+.intro__mars {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    // background-color: $brandPrimary;
+    background-image: url('../images/mars.png');
+    background-size: cover;
+  }
+
+  @include adapt(1080px) {
+    position: absolute;
+    bottom: 0;
+    right: 0px;
+    height: 800px;
+    width: 800px;
+
+    &::after {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: bottom;
+
+      transform: translate(200px, 200px);
+    }
+  }
 }

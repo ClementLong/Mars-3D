@@ -1,17 +1,31 @@
+@import 'reset';
+@import 'color';
+@import 'font';
+
 @mixin adapt($media) {
   @media (min-width: #{$media}) {
     @content;
   }
 }
 
-@import 'color';
-@import 'reset';
-@import 'font';
+.btn {
+  margin: 30px 0 80px 0;
+  display: inline-block;
+
+  a {
+    position: relative;
+    display: inline-block;
+    padding: 1em 5em;
+    color: #fff;
+    font-family: 'montserratMedium';
+    letter-spacing: 0.125em;
+    text-transform: uppercase;
+    background-color: $brandPrimary;
+    border-radius: 100px;
+  }
+}
+
 @import 'header';
 @import 'footer';
 @import 'introduction';
 @import 'planet';
-
-section.intro {
-  padding: 0 25px;
-}
