@@ -51,7 +51,7 @@
   line-height: 1em;
 }
 
-@mixin sectionSubtitle($size: 18px, $color: #fff) {
+@mixin sectionSubtitle($size: 18px, $color: #efefef) {
   margin-bottom: 2em;
   color: $color;
   font-family: 'montserratLight';
@@ -81,6 +81,7 @@
 
 body {
   background-color: $background;
+  color: #fff;
   font-size: 16px;
   font-family: Helvetica, Arial, sans-serif;
   line-height: 1.4em;

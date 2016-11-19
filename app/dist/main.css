@@ -89,12 +89,17 @@ a:focus, a:active {
   font-style: normal; }
 body {
   background-color: #1c1d2a;
+  color: #fff;
   font-size: 16px;
   font-family: Helvetica, Arial, sans-serif;
   line-height: 1.4em; }
 
 a {
   color: inherit; }
+
+body {
+  margin: 0 auto;
+  max-width: 1440px; }
 
 .btn, .intro__btn {
   margin: 30px 0 80px 0;
@@ -135,7 +140,7 @@ a {
         padding: 0; } }
   .header .header__subtitle {
     margin-bottom: 2em;
-    color: #fff;
+    color: #efefef;
     font-family: 'montserratLight';
     font-size: 18px;
     letter-spacing: 0.08em;
@@ -146,7 +151,7 @@ a {
     @media (min-width: 1080px) {
       .header .header__subtitle {
         margin-bottom: 2em;
-        color: #fff;
+        color: #efefef;
         font-family: 'montserratLight';
         font-size: 24px;
         letter-spacing: 0.08em;
@@ -155,6 +160,7 @@ a {
         padding: 0; } }
 
 .footer {
+  margin-top: 50px;
   background-color: #3c3d48; }
   .footer ul {
     text-align: center; }
@@ -177,7 +183,18 @@ a {
       content: "\e400"; }
 
 .intro {
-  padding-top: 20px; }
+  padding-top: 20px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  text-align: center; }
 
 .intro__infos {
   text-align: center; }
@@ -215,15 +232,6 @@ a {
   text-transform: uppercase;
   line-height: 1.4em;
   padding: 0 20px; }
-  .intro__descriptionTitle::before {
-    content: '';
-    height: 10px;
-    width: 100%;
-    z-index: -5;
-    background-color: #be2935;
-    position: absolute;
-    bottom: 4px;
-    left: 0px; }
   @media (min-width: 1080px) {
     .intro__descriptionTitle {
       margin-bottom: 0.8em;
@@ -234,9 +242,7 @@ a {
       text-transform: uppercase;
       line-height: 1.4em;
       text-align: left;
-      padding: 0; }
-      .intro__descriptionTitle::before {
-        bottom: 2px; } }
+      padding: 0; } }
 
 .intro__descriptionText {
   color: #fff;
@@ -266,3 +272,211 @@ a {
   position: relative;
   height: 0px;
   overflow: hidden; }
+
+.exp {
+  padding-top: 20px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  text-align: center; }
+
+.exp__result, .exp__graph {
+  padding: 0 20px; }
+
+.exp__resultTitle {
+  margin-bottom: 0.8em;
+  color: #fff;
+  font-family: 'montserratMedium';
+  font-size: 20px;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+  line-height: 1.4em; }
+  @media (min-width: 1080px) {
+    .exp__resultTitle {
+      margin-bottom: 0.8em;
+      color: #fff;
+      font-family: 'montserratMedium';
+      font-size: 34px;
+      letter-spacing: 0.125em;
+      text-transform: uppercase;
+      line-height: 1.4em; } }
+
+.exp__infos {
+  margin-bottom: 0.8em;
+  color: #fff;
+  font-family: 'montserratMedium';
+  font-size: 16px;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+  line-height: 1.4em; }
+  @media (min-width: 1080px) {
+    .exp__infos .exp__infosStatut, .exp__infos .exp__infosJourney, .exp__infos .exp__infosPopulation {
+      display: inline-block;
+      padding: 0px 50px; } }
+
+.exp__graphTitle {
+  margin-top: 34px;
+  margin-bottom: 0.8em;
+  color: #fff;
+  font-family: 'montserratMedium';
+  font-size: 18px;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+  line-height: 1.4em; }
+  @media (min-width: 1080px) {
+    .exp__graphTitle {
+      margin-bottom: 0.8em;
+      color: #fff;
+      font-family: 'montserratMedium';
+      font-size: 34px;
+      letter-spacing: 0.125em;
+      text-transform: uppercase;
+      line-height: 1.4em; } }
+
+.exp__graphSubtitle {
+  margin-bottom: 0.8em;
+  color: #fff;
+  font-family: 'montserratMedium';
+  font-size: 14px;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+  line-height: 1.4em; }
+  @media (min-width: 1080px) {
+    .exp__graphSubtitle {
+      margin-bottom: 0.8em;
+      color: #fff;
+      font-family: 'montserratMedium';
+      font-size: 24px;
+      letter-spacing: 0.125em;
+      text-transform: uppercase;
+      line-height: 1.4em; } }
+
+.exp__authorsTitle, .exp__conceptTitle, .exp__missionTitle, .exp__moreTitle, .moreArticle__Title {
+  margin-top: 34px;
+  margin-bottom: 0.8em;
+  color: #fff;
+  font-family: 'montserratMedium';
+  font-size: 18px;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+  line-height: 1.4em; }
+  @media (min-width: 1080px) {
+    .exp__authorsTitle, .exp__conceptTitle, .exp__missionTitle, .exp__moreTitle, .moreArticle__Title {
+      margin-bottom: 0.8em;
+      color: #fff;
+      font-family: 'montserratMedium';
+      font-size: 20px;
+      letter-spacing: 0.125em;
+      text-transform: uppercase;
+      line-height: 1.4em; } }
+
+@media (min-width: 1080px) {
+  .exp__project {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between; } }
+
+.exp__projectAuthors {
+  text-align: left;
+  padding: 0 20px; }
+  @media (min-width: 1080px) {
+    .exp__projectAuthors {
+      width: 400px; } }
+  .exp__projectAuthors .exp__author {
+    margin-bottom: 20px; }
+  .exp__projectAuthors .author__img {
+    height: 60px;
+    width: 60px;
+    background-color: #be2935;
+    border-radius: 50%;
+    float: left;
+    clear: both;
+    margin-right: 15px; }
+  .exp__projectAuthors .author__id {
+    padding-top: 10px;
+    height: 60px; }
+    @media (min-width: 1080px) {
+      .exp__projectAuthors .author__id {
+        min-width: 600px; } }
+    .exp__projectAuthors .author__id .author__name {
+      margin-bottom: 0.8em;
+      color: #fff;
+      font-family: 'montserratMedium';
+      font-size: 16px;
+      letter-spacing: 0.125em;
+      text-transform: uppercase;
+      line-height: 1.4em;
+      margin-bottom: 3px; }
+    .exp__projectAuthors .author__id .author__job {
+      margin-bottom: 0.8em;
+      color: #c1c1c1;
+      font-family: 'montserratMedium';
+      font-size: 14px;
+      letter-spacing: 0.125em;
+      text-transform: uppercase;
+      line-height: 1.4em;
+      font-family: 'montserratLight';
+      margin-bottom: 0; }
+
+@media (min-width: 1080px) {
+  .exp__projectContext {
+    max-width: 800px; } }
+
+.exp__concept {
+  text-align: left;
+  padding: 0 20px; }
+  .exp__concept .exp__conceptText {
+    color: #c1c1c1;
+    font-family: 'andalemonoRegular', monospace;
+    font-size: 16px;
+    letter-spacing: -0.08em;
+    line-height: 1.5em; }
+
+.exp__mission {
+  text-align: left;
+  padding: 0 20px; }
+  .exp__mission .exp__missionText {
+    color: #c1c1c1;
+    font-family: 'andalemonoRegular', monospace;
+    font-size: 16px;
+    letter-spacing: -0.08em;
+    line-height: 1.5em; }
+
+.exp__more {
+  text-align: left;
+  padding: 0 20px; }
+  .exp__more .articles__container {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between; }
+    @media (min-width: 1080px) {
+      .exp__more .articles__container {
+        flex-wrap: nowrap; } }
+  .exp__more .moreArticle {
+    margin-top: 42px;
+    margin-bottom: 10px;
+    margin: 42px 5px 10px 5px;
+    max-width: 350px; }
+  .exp__more .exp__moreText, .exp__more .moreArticle__Text {
+    color: #c1c1c1;
+    font-family: 'andalemonoRegular', monospace;
+    font-size: 16px;
+    letter-spacing: -0.08em;
+    line-height: 1.5em; }
+  .exp__more .exp__moreText {
+    max-width: 500px; }
+  .exp__more .moreArticle__img {
+    margin-bottom: -15px;
+    height: 200px;
+    background-color: #be2935; }
