@@ -19,16 +19,16 @@
     font-family: "icomoon";
     font-size: 20px;
 
-    &.twitter:before {
+    &.twitter::after {
       content: "\e100";
     }
-    &.youtube:before {
+    &.youtube::after {
       content: "\e200";
     }
-    &.instagram:before {
+    &.instagram::after {
       content: "\e300";
     }
-    &.github:before {
+    &.github::after {
       content: "\e400";
     }
   }

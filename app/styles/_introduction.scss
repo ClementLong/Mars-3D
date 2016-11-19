@@ -1,40 +1,17 @@
 .intro {
   padding-top: 20px;
-  min-height: 100vh;
+  // min-height: 100vh;
 
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: stretch;
-  text-align: center;
-}
-
-.intro__title {
-  @include sectionTitle();
-  padding: 0 20px;
-
-  text-transform: uppercase;
-
-  @include adapt(1080px) {
-    @include sectionTitle(112px);
-    padding: 0;
-  }
-}
-
-.intro__subtitle {
-  @include sectionSubtitle();
-  padding: 0 20px;
-
-  text-transform: uppercase;
-
-  @include adapt(1080px) {
-    @include sectionSubtitle(24px);
-    padding: 0;
-  }
+  // display: flex;
+  // flex-direction: column;
+  // flex-wrap: nowrap;
+  // justify-content: center;
+  // align-items: stretch;
+  // text-align: center;
 }
 
 .intro__infos {
+  text-align: center;
   @include adapt(1080px) {
     width: 40%;
   }
@@ -62,6 +39,7 @@
     }
   }
 }
+
 .intro__descriptionTitle {
   display: block;
   position: relative;
@@ -122,34 +100,34 @@
 
 .intro__mars {
   position: relative;
-  height: 200px;
+  height: 0px;
   overflow: hidden;
 
-  &::after {
-    content: '';
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    // background-color: $brandPrimary;
-    // background-image: url('../images/mars.png');
-    background-size: cover;
-  }
-
-  @include adapt(1080px) {
-    position: absolute;
-    bottom: 0;
-    right: 0px;
-    height: 800px;
-    width: 800px;
-
-    &::after {
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: bottom;
-
-      transform: translate(200px, 200px);
-    }
-  }
+  // &::after {
+  //   content: '';
+  //   bottom: 0;
+  //   right: 0;
+  //   position: absolute;
+  //   height: 100%;
+  //   width: 100%;
+  //   // background-color: $brandPrimary;
+  //   // background-image: url('../images/mars.png');
+  //   background-size: cover;
+  // }
+  //
+  // @include adapt(1080px) {
+  //   position: absolute;
+  //   bottom: 0;
+  //   right: 0px;
+  //   height: 800px;
+  //   width: 800px;
+  //
+  //   &::after {
+  //     background-size: cover;
+  //     background-repeat: no-repeat;
+  //     background-position: bottom;
+  //
+  //     transform: translate(200px, 200px);
+  //   }
+  // }
 }

@@ -110,6 +110,50 @@ a {
     background-color: #be2935;
     border-radius: 100px; }
 
+.header {
+  padding-top: 20px;
+  text-align: center; }
+  .header .header__title {
+    margin-bottom: 0.1em;
+    color: #fff;
+    font-family: 'aileronsRegular';
+    font-size: 72px;
+    letter-spacing: -0.12em;
+    text-transform: uppercase;
+    line-height: 1em;
+    padding: 0 20px;
+    text-transform: uppercase; }
+    @media (min-width: 1080px) {
+      .header .header__title {
+        margin-bottom: 0.1em;
+        color: #fff;
+        font-family: 'aileronsRegular';
+        font-size: 112px;
+        letter-spacing: -0.12em;
+        text-transform: uppercase;
+        line-height: 1em;
+        padding: 0; } }
+  .header .header__subtitle {
+    margin-bottom: 2em;
+    color: #fff;
+    font-family: 'montserratLight';
+    font-size: 18px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.2em;
+    padding: 0 20px;
+    text-transform: uppercase; }
+    @media (min-width: 1080px) {
+      .header .header__subtitle {
+        margin-bottom: 2em;
+        color: #fff;
+        font-family: 'montserratLight';
+        font-size: 24px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        line-height: 1.2em;
+        padding: 0; } }
+
 .footer {
   background-color: #3c3d48; }
   .footer ul {
@@ -123,75 +167,23 @@ a {
     color: #fff;
     font-family: "icomoon";
     font-size: 20px; }
-    .footer .icon.twitter:before {
+    .footer .icon.twitter::after {
       content: "\e100"; }
-    .footer .icon.youtube:before {
+    .footer .icon.youtube::after {
       content: "\e200"; }
-    .footer .icon.instagram:before {
+    .footer .icon.instagram::after {
       content: "\e300"; }
-    .footer .icon.github:before {
+    .footer .icon.github::after {
       content: "\e400"; }
 
 .intro {
-  padding-top: 20px;
-  min-height: 100vh;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  -webkit-box-pack: center;
-  justify-content: center;
-  -webkit-box-align: stretch;
-  align-items: stretch;
+  padding-top: 20px; }
+
+.intro__infos {
   text-align: center; }
-
-.intro__title {
-  margin-bottom: 0.1em;
-  color: #fff;
-  font-family: 'aileronsRegular';
-  font-size: 72px;
-  letter-spacing: -0.12em;
-  text-transform: uppercase;
-  line-height: 1em;
-  padding: 0 20px;
-  text-transform: uppercase; }
   @media (min-width: 1080px) {
-    .intro__title {
-      margin-bottom: 0.1em;
-      color: #fff;
-      font-family: 'aileronsRegular';
-      font-size: 112px;
-      letter-spacing: -0.12em;
-      text-transform: uppercase;
-      line-height: 1em;
-      padding: 0; } }
-
-.intro__subtitle {
-  margin-bottom: 2em;
-  color: #fff;
-  font-family: 'montserratLight';
-  font-size: 18px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  line-height: 1.2em;
-  padding: 0 20px;
-  text-transform: uppercase; }
-  @media (min-width: 1080px) {
-    .intro__subtitle {
-      margin-bottom: 2em;
-      color: #fff;
-      font-family: 'montserratLight';
-      font-size: 24px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      line-height: 1.2em;
-      padding: 0; } }
-
-@media (min-width: 1080px) {
-  .intro__infos {
-    width: 40%; } }
+    .intro__infos {
+      width: 40%; } }
 
 .intro__description {
   position: relative; }
@@ -272,26 +264,5 @@ a {
 
 .intro__mars {
   position: relative;
-  height: 200px;
+  height: 0px;
   overflow: hidden; }
-  .intro__mars::after {
-    content: '';
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-size: cover; }
-  @media (min-width: 1080px) {
-    .intro__mars {
-      position: absolute;
-      bottom: 0;
-      right: 0px;
-      height: 800px;
-      width: 800px; }
-      .intro__mars::after {
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: bottom;
-        -webkit-transform: translate(200px, 200px);
-        transform: translate(200px, 200px); } }
