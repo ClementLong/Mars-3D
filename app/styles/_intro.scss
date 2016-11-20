@@ -44,29 +44,14 @@
   display: block;
   position: relative;
   z-index: 0;
+  @extend .greatTitle;
   @include paragraphTitle();
   padding: 0 20px;
-
-  // &::before {
-  //   content: '';
-  //   height: 10px;
-  //   width: 100%;
-  //   z-index: -5;
-  //   background-color: $brandPrimary;
-  //
-  //   position: absolute;
-  //   bottom: 4px;
-  //   left: 0px;
-  // }
 
   @include adapt(1080px) {
     @include paragraphTitle(24px);
     text-align: left;
     padding: 0;
-
-    // &::before {
-    //   bottom: 2px;
-    // }
   }
 }
 
