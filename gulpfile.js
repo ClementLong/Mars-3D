@@ -4,6 +4,8 @@ const sass = require('gulp-ruby-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const browserify = require('gulp-browserify');
 
+// Tache clean DEL
+
 // Babel ♥️ & Browserify
 gulp.task('babel', () => {
   return gulp.src('app/scripts/*.js')
@@ -13,7 +15,7 @@ gulp.task('babel', () => {
     .pipe(browserify({
       insertGlobals : true
     }))
-    .pipe(gulp.dest('app/dist'))
+    .pipe(gulp.dest('dist'))
 });
 
 // Sass ♥️
@@ -24,7 +26,7 @@ gulp.task('sass', () => {
         browsers: ['> 1%'],
         cascade: false
     }))
-    .pipe(gulp.dest('app/dist'))
+    .pipe(gulp.dest('dist'))
 });
 
 // Watch

@@ -31,8 +31,8 @@ planet.initPlanet = () => {
 
   // Type & where render
   const renderer = new THREE.WebGLRenderer()
-  renderer.setSize( window.innerWidth, window.innerHeight )
-  document.querySelector('.planet').appendChild( renderer.domElement )
+  renderer.setSize( window.innerWidth/1.25 , window.innerHeight/1.25 )
+  document.querySelector('.planet__three').appendChild( renderer.domElement )
 
   // TextureLoader
   const the_map = new THREE.TextureLoader().load('./images/mars_1k_color.jpg')
