@@ -219,7 +219,8 @@ body {
       width: 40%; } }
 
 .intro__description {
-  position: relative; }
+  position: relative;
+  padding: 0 15px; }
   @media (min-width: 1080px) {
     .intro__description {
       width: 100%;
@@ -294,11 +295,12 @@ body {
   text-align: center; }
 
 .exp__intro {
-  padding: 50px 50px 70px 50px;
   margin: 0 auto;
+  padding: 0 15px;
   max-width: 600px; }
   @media (min-width: 1080px) {
     .exp__intro {
+      padding: 50px 50px 70px 50px;
       background-color: #3c3d48; } }
 
 .exp__introTitle {
@@ -332,25 +334,38 @@ body {
   .exp__introText:first-of-type {
     margin-bottom: 2em; }
 
+.exp__btn {
+  margin-left: 15px;
+  margin-right: 15px; }
+
 .exp__quizz {
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: justify;
   justify-content: space-between;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  flex-direction: row; }
+  flex-direction: column; }
+  @media (min-width: 1080px) {
+    .exp__quizz {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      flex-direction: row; } }
 
 .exp__planet {
-  height: 500px;
+  min-height: 320px;
   background-color: #be2935; }
   @media (min-width: 1080px) {
     .exp__planet {
+      min-height: 500px;
       min-width: 600px; } }
 
 .exp__questions {
-  padding: 50px;
+  padding: 25px;
   background-color: #3c3d48; }
+  @media (min-width: 1080px) {
+    .exp__questions {
+      padding: 50px; } }
 
 .exp__questionsTitle {
   margin-bottom: 0.8em;
@@ -383,7 +398,11 @@ body {
   margin-top: 34px; }
 
 .exp__answer {
-  margin-top: 30px; }
+  margin-top: 30px;
+  text-align: center; }
+  @media (min-width: 1080px) {
+    .exp__answer {
+      text-align: left; } }
   .exp__answer .yes, .exp__answer .no {
     position: relative;
     display: inline-block;

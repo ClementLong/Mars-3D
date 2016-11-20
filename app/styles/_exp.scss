@@ -4,10 +4,11 @@
 }
 
 .exp__intro {
-  padding: 50px 50px 70px 50px;
   margin: 0 auto;
+  padding: 0 15px;
   max-width: 600px;
   @include adapt(1080px) {
+    padding: 50px 50px 70px 50px;
     background-color: $secondaryBackground;
   }
 }
@@ -32,26 +33,36 @@
 }
 
 .exp__btn {
+  margin-left: 15px;
+  margin-right: 15px;
   @extend .btn;
 }
 
 .exp__quizz {
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
+  flex-direction: column;
+
+  @include adapt(1080px) {
+    flex-direction: row;
+  }
 }
 
 .exp__planet {
-  height: 500px;
+  min-height: 320px;
   background-color: $brandPrimary;
   @include adapt(1080px) {
+    min-height: 500px;
     min-width: 600px;
   }
 }
 
 .exp__questions {
-  padding: 50px;
+  padding: 25px;
   background-color: $secondaryBackground;
+  @include adapt(1080px) {
+    padding: 50px;
+  }
 }
 
 .exp__questionsTitle {
@@ -76,6 +87,11 @@
 
 .exp__answer {
   margin-top: 30px;
+  text-align: center;
+
+  @include adapt(1080px) {
+    text-align: left;
+  }
 
   .yes, .no {
     position: relative;

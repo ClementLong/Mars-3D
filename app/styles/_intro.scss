@@ -19,6 +19,7 @@
 
 .intro__description {
   position: relative;
+  padding: 0 15px;
 
   @include adapt(1080px) {
     width: 100%;
