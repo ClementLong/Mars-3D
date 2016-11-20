@@ -27,17 +27,39 @@
     </header>
     <section class="exp">
       <div class="exp__result">
-        <h3 class="exp__resultTitle">Vous partirez sur Mars en 2184</h3>
+        <h3 class="exp__resultTitle">Vous partirez sur Mars en 3000</h3>
+        <p class="exp__resultText">Visiter Mars ? Pourquoi pas. Vous êtes curieux et découvrir les paysages de la planète qui jadis était rouge vous enthousiasme. Dans l’immédiat vous avez d’autres voyages de prévus mais vous irez sur Mars c’est une certitude. D’ailleurs vous avez déjà pris votre billet, mais l’attente est un peu longue. Soyez patient, ça vaut le coup !</p>
         <div class="exp__infos">
-          <p class="exp__infosStatut">Vous êtes un explorateur</p>
-          <p class="exp__infosJourney">Votre voyage durera 6 mois</p>
-          <p class="exp__infosPopulation">Mars comptera 200 000 habitants</p>
+          <p data-pop="100 000 habs." class="exp__infosPopulation">Mars comptera 100 000 habs</p>
+          <p class="exp__infosStatut statut-icon icon-martien">Vous êtes un aventurier</p>
+          <p data-journey="1 mois" class="exp__infosJourney">Votre voyage durera 1 mois</p>
         </div>
       </div>
       <div class="exp__graph">
         <h4 class="exp__graphTitle">Répartition des résultats</h4>
         <h5 class="exp__graphSubtitle">Découvrez les résultats des autres explorateurs</h5>
-        <div class="exp__graphZone"></div>
+        <div class="exp__graphZone">
+          <div id="martien" class="category">
+            <div data-value="25%" class="category__value"></div>
+            <div class="category__name">Martien</div>
+          </div>
+          <div id="pionner" class="category">
+            <div data-value="30%" class="category__value"></div>
+            <div class="category__name">Pionnier</div>
+          </div>
+          <div id="aventurier" class="category">
+            <div data-value="20%" class="category__value"></div>
+            <div class="category__name">Aventurier</div>
+          </div>
+          <div id="touriste" class="category">
+            <div data-value="10%" class="category__value"></div>
+            <div class="category__name">Touriste</div>
+          </div>
+          <div id="terrien" class="category">
+            <div data-value="5%" class="category__value"></div>
+            <div class="category__name">Terrien</div>
+          </div>
+        </div>
       </div>
       <div class="exp__project">
         <div class="exp__projectAuthors">

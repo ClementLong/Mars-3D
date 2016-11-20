@@ -20,19 +20,57 @@
     @include paragraphTitle($size: 34px);
   }
 }
+
 .exp__infos {
+  display: flex;
+  flex-direction: column;
   @include paragraphTitle(16px);
+  @include adapt(1080px) {
+    flex-direction: row;
+    justify-content: center;
+  }
 
   .exp__infosStatut, .exp__infosJourney, .exp__infosPopulation {
+    position: relative;
+    margin-top: 30px;
     @include adapt(1080px) {
-      display: inline-block;
       padding: 0px 50px;
+    }
+  }
+
+  .exp__infosJourney::before, .exp__infosPopulation:before {
+    @include adapt(1080px) {
+      position: absolute;
+      width: 100%;
+      top: -60%;
+      left: 50%;
+      color: rgba($brandSecondary, 0.6);
+      font-size: 42px;
+      transform: translate(-50%);
+      z-index: -5;
+    }
+  }
+  .exp__infosJourney::before {
+    @include adapt(1080px) {
+      content: attr(data-journey);
+    }
+  }
+
+  .exp__infosPopulation:before {
+    @include adapt(1080px) {
+      content: attr(data-pop);
     }
   }
 }
 
+.exp__resultText {
+  margin: 25px auto 50px auto;
+  max-width: 600px;
+  @include paragraphText($color: $brandSecondary);
+}
+
 .exp__graphTitle {
-  margin-top: 34px;
+  margin-top: 75px;
   @include paragraphTitle(18px);
 
   @include adapt(1080px) {
@@ -41,10 +79,85 @@
 }
 
 .exp__graphSubtitle {
-  @include paragraphTitle(14px);
+  @include paragraphTitle(14px, $brandSecondary);
 
   @include adapt(1080px) {
-    @include paragraphTitle(24px);
+    @include paragraphTitle(22px, $brandSecondary);
+  }
+}
+
+.exp__graphZone {
+  position: relative;
+  margin: 50px auto 100px auto;
+  height: 400px;
+  max-width: 800px;
+  // background-color: $brandSecondary;
+  display: flex;
+  flex-direction: column;
+
+  @include adapt(1080px) {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    border-left: 2px solid $brandSecondary;
+    border-bottom: 2px solid $brandSecondary;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: 12px solid transparent;
+      border-bottom-color: $brandSecondary;
+
+      transform: translate(-50%, -100%);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      border: 12px solid transparent;
+      border-left-color: $brandSecondary;
+
+      transform: translate(100%, 50%);
+    }
+  }
+
+  .category__value {
+    position: relative;
+    height: 50px;
+    background-color: $brandPrimary;
+
+    &::before {
+      content: attr(data-value);
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(-50%, -50%);
+    }
+
+    @include adapt(1080px) {
+      height: 250px;
+
+      &::before {
+        top: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+  }
+
+  .category__name {
+    @include paragraphText($brandSecondary);
+    padding: 10px;
+    text-align: left;
+
+    @include adapt(1080px) {
+      text-align: center;
+    }
   }
 }
 
