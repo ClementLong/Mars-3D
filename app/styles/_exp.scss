@@ -1,0 +1,116 @@
+.exp {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.exp__intro {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 600px;
+  @include adapt(1080px) {
+    padding: 50px 50px 70px 50px;
+    background-color: $secondaryBackground;
+  }
+}
+
+.exp__introTitle {
+  @extend .greatTitle;
+  @include paragraphTitle();
+  @include adapt(1080px) {
+    text-align: center;
+    @include paragraphTitle($size: 34px);
+  }
+}
+
+.exp__introText {
+  @include paragraphText($color: $brandSecondary);
+  @include adapt(1080px) {
+    text-align: justify;
+  }
+  &:first-of-type {
+    margin-bottom: 2em;
+  }
+}
+
+.exp__btn {
+  margin-left: 15px;
+  margin-right: 15px;
+  @extend .btn;
+}
+
+.exp__quizz {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  @include adapt(1080px) {
+    flex-direction: row;
+  }
+}
+
+.exp__planet {
+  min-height: 320px;
+  background-color: $brandPrimary;
+  @include adapt(1080px) {
+    min-height: 500px;
+    min-width: 600px;
+  }
+}
+
+.exp__questions {
+  padding: 25px;
+  background-color: $secondaryBackground;
+  @include adapt(1080px) {
+    padding: 50px;
+  }
+}
+
+.exp__questionsTitle {
+  @include paragraphTitle();
+  text-align: left;
+  @extend .greatTitle;
+  @include adapt(1080px) {
+    @include paragraphTitle($size: 34px);
+  }
+}
+
+.exp__questionsText {
+  @include paragraphText($color: $brandSecondary);
+  text-align: left;
+  @include adapt(1080px) {
+  }
+}
+
+.exp__question {
+  margin-top: 34px;
+}
+
+.exp__answer {
+  margin-top: 30px;
+  text-align: center;
+
+  @include adapt(1080px) {
+    text-align: left;
+  }
+
+  .yes, .no {
+    position: relative;
+    display: inline-block;
+    margin: 0 30px;
+    height: 60px;
+    width: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+
+    a {
+      @include paragraphTitle(14px);
+      color: $brandPrimary;
+      text-transform: uppercase;
+      position: absolute;
+      z-index: 5;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

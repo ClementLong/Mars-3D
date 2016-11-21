@@ -1,0 +1,28 @@
+.header {
+  padding-top: 20px;
+  text-align: center;
+
+  .header__title {
+    @include sectionTitle();
+    padding: 0 20px;
+
+    text-transform: uppercase;
+
+    @include adapt(1080px) {
+      @include sectionTitle(112px);
+      padding: 0;
+    }
+  }
+
+  .header__subtitle {
+    @include sectionSubtitle();
+    padding: 0 20px;
+
+    text-transform: uppercase;
+
+    @include adapt(1080px) {
+      @include sectionSubtitle(24px);
+      padding: 0;
+    }
+  }
+}
