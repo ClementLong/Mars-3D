@@ -57,17 +57,25 @@ body {
 @import 'exp';
 @import 'result';
 
+//
+// .result, .intro, .exp {
+//   position: absolute;
+//   top : 0;
+//   left: 0;
+// }
 
-.result, .intro, .exp {
-  position: absolute;
-  top : 0;
-  left: 0;
-}
-
-.result, .exp {
+.result, .exp__intro, .exp__quizz {
   display: none !important;
 }
 
 .block {
   display: block !important;
+}
+
+.flex {
+  display: flex !important;
+}
+
+.none {
+  display: none !important;
 }

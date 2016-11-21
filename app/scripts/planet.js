@@ -9,7 +9,6 @@ planet.spotLight = new planet.three.SpotLight( 0xffffbb, 1.3 )
 planet.rotationVariationY = 0.001
 planet.rotationVariationX = 0.001
 planet.renderer = new planet.three.WebGLRenderer()
-planet.state = 4;
 
 planet.initCamera = () => {
   planet.camera.position.z = 5
@@ -49,6 +48,7 @@ planet.rotation = () => {
 }
 
 planet.renderPosition = () => {
+  console.log(planet.section.offsetWidth)
   planet.renderer.setSize( planet.section.offsetWidth , planet.section.offsetHeight )
   planet.section.appendChild( planet.renderer.domElement )
 }
@@ -136,7 +136,7 @@ planet.render = () => {
   render()
 }
 
-planet.initPlanet = () => {
+planet.initPlanet = (state) => {
   // Init scene & camera
   planet.initCamera()
 
@@ -148,9 +148,17 @@ planet.initPlanet = () => {
 
   planet.renderPosition()
 
-  planet.textureLoader('./images/mars_1k_color.jpg', './images/mars_1k_topo.jpg')
+  if(state == 1) {
+    planet.textureLoader('../app/images/mars/mars_1k_color1.jpg', '../app/images/mars/mars_1k_topo1.jpg')
+  } else if (state == 2) {
+    planet.textureLoader('../app/images/mars/mars_1k_color2.jpg', '../app/images/mars/mars_1k_topo2.jpg')
+  } else if (state == 3) {
+    planet.textureLoader('../app/images/mars/mars_1k_color3.jpg', '../app/images/mars/mars_1k_topo3.jpg')
+  } else if (state == 4) {
+    planet.textureLoader('../app/images/mars/mars_1k_color4.jpg', '../app/images/mars/mars_1k_topo4.jpg')
+  }
 
-  if(planet.state = 4) {
+  if(state == 4) {
     planet.atmosphere()
   }
 
@@ -159,4 +167,4 @@ planet.initPlanet = () => {
   planet.rotation()
 }
 
-planet.initPlanet()
+planet.initPlanet(1)

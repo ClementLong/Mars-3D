@@ -1,5 +1,4 @@
 .exp {
-  padding-top: 20px;
   text-align: center;
 }
 
@@ -9,7 +8,7 @@
   padding: 0 15px;
   max-width: 600px;
   @include adapt(1080px) {
-    padding: 50px 50px 70px 50px;
+    padding: 0px 50px 0px;
     background-color: $secondaryBackground;
   }
 }
@@ -37,6 +36,10 @@
   margin-left: 15px;
   margin-right: 15px;
   @extend .btn;
+
+  a {
+    cursor: pointer;
+  }
 }
 
 .exp__quizz {
