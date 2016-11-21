@@ -3,9 +3,9 @@ const planet = {}
 // Init three.js requirement
 planet.three = require('three')
 planet.scene = new planet.three.Scene()
-planet.camera = new planet.three.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 )
-planet.spotLight = new planet.three.SpotLight( 0xffffbb, 1.3 )
 planet.section = document.querySelector('.planet__three')
+planet.camera = new planet.three.PerspectiveCamera( 75, planet.section.offsetWidth/planet.section.offsetHeight, 0.1, 1000 )
+planet.spotLight = new planet.three.SpotLight( 0xffffbb, 1.3 )
 planet.rotationVariationY = 0.001
 planet.rotationVariationX = 0.001
 planet.renderer = new planet.three.WebGLRenderer()
@@ -49,7 +49,7 @@ planet.rotation = () => {
 }
 
 planet.renderPosition = () => {
-  planet.renderer.setSize( window.innerWidth/1.25 , window.innerHeight/1.25 )
+  planet.renderer.setSize( planet.section.offsetWidth , planet.section.offsetHeight )
   planet.section.appendChild( planet.renderer.domElement )
 }
 
