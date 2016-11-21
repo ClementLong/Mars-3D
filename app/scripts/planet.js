@@ -1,95 +1,162 @@
 const planet = {}
 
-planet.initPlanet = () => {
-  // Load Three.js
-  const THREE = require('three')
+// Init three.js requirement
+planet.three = require('three')
+planet.scene = new planet.three.Scene()
+planet.camera = new planet.three.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 )
+planet.spotLight = new planet.three.SpotLight( 0xffffbb, 1.3 )
+planet.section = document.querySelector('.planet__three')
+planet.rotationVariationY = 0.001
+planet.rotationVariationX = 0.001
+planet.renderer = new planet.three.WebGLRenderer()
+planet.state = 4;
 
-  // Init scene & camera
-  const scene = new THREE.Scene()
-  const camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 )
-  camera.position.z = 5
+planet.initCamera = () => {
+  planet.camera.position.z = 5
+}
 
-  //Light
-  scene.add( new THREE.HemisphereLight( 0x443333, 0x111122 ) )
+planet.InitSpotLight = () => {
+  planet.spotLight.position.set( 1.75, 0.75, 2 )
+  planet.spotLight.position.multiplyScalar( 700 )
+  planet.scene.add( planet.spotLight )
 
-  const spotLight = new THREE.SpotLight( 0xffffbb, 1.3 )
-  spotLight.position.set( 0.5, 0, 2 )
-  spotLight.position.multiplyScalar( 700 )
-  scene.add( spotLight )
+  planet.spotLight.castShadow = true
 
-  spotLight.castShadow = true
+  planet.spotLight.shadow.mapSize.width = 2048
+  planet.spotLight.shadow.mapSize.height = 2048
 
-  spotLight.shadow.mapSize.width = 2048
-  spotLight.shadow.mapSize.height = 2048
+  planet.spotLight.shadow.camera.near = 500
+  planet.spotLight.shadow.camera.far = 500
 
-  spotLight.shadow.camera.near = 500
-  spotLight.shadow.camera.far = 500
+  planet.spotLight.shadow.camera.fov = 200
 
-  spotLight.shadow.camera.fov = 200
+  planet.spotLight.shadow.bias = -0.005
+}
 
-  spotLight.shadow.bias = -0.005
+planet.rotation = () => {
+  const mouseEvent = planet.section.addEventListener('mousemove', (e) => {
+    if( (window.innerWidth/2) < e.clientX) {
+      planet.rotationVariationY = 0.001
+    } else {
+      planet.rotationVariationY = -0.001
+    }
+    if( (window.innerHeight/2) < e.clientY) {
+      planet.rotationVariationX = 0.001
+    } else {
+      planet.rotationVariationX = -0.001
+    }
+  })
+}
 
-  // Type & where render
-  const renderer = new THREE.WebGLRenderer()
-  renderer.setSize( window.innerWidth/1.25 , window.innerHeight/1.25 )
-  document.querySelector('.planet__three').appendChild( renderer.domElement )
+planet.renderPosition = () => {
+  planet.renderer.setSize( window.innerWidth/1.25 , window.innerHeight/1.25 )
+  planet.section.appendChild( planet.renderer.domElement )
+}
 
-  // TextureLoader
-  const the_map = new THREE.TextureLoader().load('./images/mars_1k_color.jpg')
-  const bmap = new THREE.TextureLoader().load('./images/mars_1k_topo.jpg')
-  const geometry  = new THREE.SphereGeometry(2, 32, 32)
-  const material  = new THREE.MeshPhongMaterial({
-    map : the_map,
+planet.textureLoader = (theMapPath, theBmapPath) => {
+  const theMap = new planet.three.TextureLoader().load(theMapPath)
+  const theBmap = new planet.three.TextureLoader().load(theBmapPath)
+  const geometry  = new planet.three.SphereGeometry(2, 32, 32)
+  const material  = new planet.three.MeshPhongMaterial({
+    map : theMap,
     specular: 0x222222,
     shininess: 10,
-    bumpMap : bmap,
-    bumpScale	: 0.02
-    // specularMap	: THREE.ImageUtils.loadTexture(THREEx.Planets.baseURL+'images/earthspec1k.jpg'),
-    // specular	: new THREE.Color('grey'),
+    bumpMap : theBmap,
+    bumpScale	: 0.02,
   })
 
-  const marsMesh = new THREE.Mesh(geometry, material)
-  scene.add(marsMesh)
+  planet.marsMesh = new planet.three.Mesh(geometry, material)
+  planet.scene.add(planet.marsMesh)
+}
 
-  const the_map2 = new THREE.TextureLoader().load('./images/cloudmap.jpg')
-  const geometry2  = new THREE.SphereGeometry(0.51, 32, 32)
-  const material2  = new THREE.MeshPhongMaterial({
-    map         : the_map2,
-    side        : THREE.DoubleSide,
+planet.atmosphere = () => {
+
+  const canvasResult	= document.createElement('canvas')
+	canvasResult.width	= 1024
+	canvasResult.height	= 512
+	const contextResult	= canvasResult.getContext('2d')
+
+	const imageMap	= new Image();
+	imageMap.addEventListener("load", function() {
+		const canvasMap	= document.createElement('canvas')
+		canvasMap.width	= imageMap.width
+		canvasMap.height= imageMap.height
+		const contextMap	= canvasMap.getContext('2d')
+		contextMap.drawImage(imageMap, 0, 0)
+		const dataMap	= contextMap.getImageData(0, 0, canvasMap.width, canvasMap.height)
+
+		const imageTrans	= new Image();
+		imageTrans.addEventListener("load", function(){
+			const canvasTrans		= document.createElement('canvas')
+			canvasTrans.width	= imageTrans.width
+			canvasTrans.height	= imageTrans.height
+			const contextTrans	= canvasTrans.getContext('2d')
+			contextTrans.drawImage(imageTrans, 0, 0)
+			const dataTrans		= contextTrans.getImageData(0, 0, canvasTrans.width, canvasTrans.height)
+			const dataResult		= contextMap.createImageData(canvasMap.width, canvasMap.height)
+			for(let y = 0, offset = 0; y < imageMap.height; y++){
+				for(let x = 0; x < imageMap.width; x++, offset += 4){
+					dataResult.data[offset+0]	= dataMap.data[offset+0]
+					dataResult.data[offset+1]	= dataMap.data[offset+1]
+					dataResult.data[offset+2]	= dataMap.data[offset+2]
+					dataResult.data[offset+3]	= 255 - dataTrans.data[offset+0]
+				}
+			}
+			contextResult.putImageData(dataResult,0,0)
+			material.map.needsUpdate = true;
+		})
+		imageTrans.src	= './images/cloudmaptr.jpg'
+	}, false);
+	imageMap.src	= './images/cloudmap.jpg'
+
+
+  // const theMap = new planet.three.TextureLoader().load('./images/cloudmap.jpg')
+  // const theMapTransparency = new planet.three.TextureLoader().load('./images/cloudmaptr.jpg')
+  const geometry  = new planet.three.SphereGeometry(2.1, 32, 32)
+  const material  = new planet.three.MeshPhongMaterial({
+    map         : new planet.three.Texture(canvasResult),
+    side        : planet.three.DoubleSide,
     opacity     : 0.8,
     transparent : true,
     depthWrite  : false,
   })
-  const cloudMesh = new THREE.Mesh(geometry2, material2)
-  marsMesh.add(cloudMesh)
+  const cloudMesh = new planet.three.Mesh(geometry, material)
+  planet.marsMesh.add(cloudMesh)
+}
 
-
-  const mouse = {}
-  mouse.variation = 0.005
-
+planet.render = () => {
   const render = () => {
     requestAnimationFrame( render )
 
-    // marsMesh.rotation.y += 0.005
-    marsMesh.rotation.y += mouse.variation
-    // cube.rotation.x += 0.1
-    // cube.rotation.y += 0.1
+    planet.marsMesh.rotation.y += planet.rotationVariationY
+    planet.marsMesh.rotation.x += planet.rotationVariationX
 
-    renderer.render(scene, camera)
+    planet.renderer.render(planet.scene, planet.camera)
+  }
+  render()
+}
+
+planet.initPlanet = () => {
+  // Init scene & camera
+  planet.initCamera()
+
+  // Init Sphere
+  planet.scene.add( new planet.three.HemisphereLight( 0x443333, 0x111122 ) )
+
+  // Init Light
+  planet.InitSpotLight()
+
+  planet.renderPosition()
+
+  planet.textureLoader('./images/mars_1k_color.jpg', './images/mars_1k_topo.jpg')
+
+  if(planet.state = 4) {
+    planet.atmosphere()
   }
 
-  render()
+  planet.render()
 
-  const planetButton = document.querySelector('.planet')
-
-  const mouseEvent = planetButton.addEventListener('mousemove', (e) => {
-    if((window.innerWidth/2) < e.clientX) {
-      mouse.variation = 0.005
-    } else {
-      mouse.variation = -0.005
-    }
-  })
-
+  planet.rotation()
 }
 
 planet.initPlanet()
