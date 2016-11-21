@@ -26,43 +26,70 @@
       <h2 class="header__subtitle">Partez à la découverte de Mars</h2>
     </header>
     <section class="exp">
-      <div class="exp__result">
-        <h3 class="exp__resultTitle">Vous partirez sur Mars en 2184</h3>
-        <div class="exp__infos">
-          <p class="exp__infosStatut">Vous êtes un explorateur</p>
-          <p class="exp__infosJourney">Votre voyage durera 6 mois</p>
-          <p class="exp__infosPopulation">Mars comptera 200 000 habitants</p>
+      <div class="exp__intro">
+        <h3 class="exp__introTitle">Immersion</h3>
+        <p class="exp__introText">Drinking vinegar meggings microdosing, fashion axe YOLO tilde meditation poutine. Humblebrag mustache street art, swag disrupt waistcoat tattooed chambray roof party art party health goth. Pitchfork franzen listicle meditation 3 wolf moon scenester tilde. Selfies hoodie chambray post-ironic, cardigan echo park you probably haven’t heard of them.</p>
+        <p class="exp__introText">Chicharrones XOXO 3 wolf moon lumbersexual williamsburg microdosing umami. Selfies echo park farm-to-table blue bottle austin. Franzen marfa pug, kickstarter sartorial tacos shabby chic whatever ethical pickled selfies beard before they sold out. Art party blue bottle retro venmo skateboard pickled.</p>
+      </div>
+      <div class="exp__btn"><a class="exp__action">Commencer l'expérience</a></div>
+      <div class="exp__quizz">
+        <div class="exp__planet"></div>
+        <div class="exp__questions">
+          <h3 class="exp__questionsTitle">Mars en 2050</h3>
+          <div class="exp__questionsText">
+            <p class="exp__context">Drinking vinegar meggings microdosing, fashion axe YOLO tilde meditation poutine. Humblebrag mustache street art, swag disrupt waistcoat tattooed chambray roof party art party health goth. Pitchfork franzen listicle meditation 3 wolf moon scenester tilde.</p>
+            <p class="exp__question">Drinking vinegar meggings microdosing, fashion axe YOLO tilde meditation poutine. Humblebrag mustache street art&nbsp;?</p>
+            <div class="exp__answer">
+              <div class="yes"><a>Oui</a></div>
+              <div class="no"><a>Non</a></div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="exp__graph">
-        <h4 class="exp__graphTitle">Répartition des résultats</h4>
-        <h5 class="exp__graphSubtitle">Découvrez les résultats des autres explorateurs</h5>
-        <div class="exp__graphZone"></div>
+    </section>
+    <header class="header">
+      <h1 class="header__title">Mars One</h1>
+      <h2 class="header__subtitle">Partez à la découverte de Mars</h2>
+    </header>
+    <section class="result">
+      <div class="exp__result">
+        <h3 class="exp__resultTitle">Vous partirez sur Mars en 3000</h3>
+        <p class="exp__resultText">Visiter Mars ? Pourquoi pas. Vous êtes curieux et découvrir les paysages de la planète qui jadis était rouge vous enthousiasme. Dans l’immédiat vous avez d’autres voyages de prévus mais vous irez sur Mars c’est une certitude. D’ailleurs vous avez déjà pris votre billet, mais l’attente est un peu longue. Soyez patient, ça vaut le coup !</p>
+        <div class="exp__infos">
+          <p data-pop="100 000 habs." class="exp__infosPopulation">Mars comptera 100 000 habs</p>
+          <p class="exp__infosStatut statut-icon icon-martien">Vous êtes un aventurier</p>
+          <p data-journey="1 mois" class="exp__infosJourney">Votre voyage durera 1 mois</p>
+        </div>
+      </div>
+      <div class="result__graph">
+        <h4 class="result__graphTitle">Répartition des résultats</h4>
+        <h5 class="result__graphSubtitle">Découvrez les résultats des autres explorateurs</h5>
+        <div class="result__graphZone">
+          <div id="martien" class="category">
+            <div data-value="25%" class="category__value"></div>
+            <div class="category__name">Martien</div>
+          </div>
+          <div id="pionner" class="category">
+            <div data-value="30%" class="category__value"></div>
+            <div class="category__name">Pionnier</div>
+          </div>
+          <div id="aventurier" class="category">
+            <div data-value="20%" class="category__value"></div>
+            <div class="category__name">Aventurier</div>
+          </div>
+          <div id="touriste" class="category">
+            <div data-value="10%" class="category__value"></div>
+            <div class="category__name">Touriste</div>
+          </div>
+          <div id="terrien" class="category">
+            <div data-value="5%" class="category__value"></div>
+            <div class="category__name">Terrien</div>
+          </div>
+        </div>
       </div>
       <div class="exp__project">
         <div class="exp__projectAuthors">
           <h5 class="exp__authorsTitle">Auteurs</h5>
-          <div class="exp__author aurelien">
-            <div class="author__img"></div>
-            <div class="author__id">
-              <h6 class="author__name">Aurélien Marast</h6>
-              <p class="author__job">UI Designer</p>
-            </div>
-          </div>
-          <div class="exp__author lv">
-            <div class="author__img"></div>
-            <div class="author__id">
-              <h6 class="author__name">Louis-Victor Morgaut</h6>
-              <p class="author__job">UX Designer</p>
-            </div>
-          </div>
-          <div class="exp__author yann">
-            <div class="author__img"></div>
-            <div class="author__id">
-              <h6 class="author__name">Yann-Edern Gillet</h6>
-              <p class="author__job">Lead Designer</p>
-            </div>
-          </div>
           <div class="exp__author juliette">
             <div class="author__img"></div>
             <div class="author__id">
@@ -77,15 +104,36 @@
               <p class="author__job">Lead Developer</p>
             </div>
           </div>
+          <div class="exp__author yann">
+            <div class="author__img"></div>
+            <div class="author__id">
+              <h6 class="author__name">Yann-Edern Gillet</h6>
+              <p class="author__job">UX Designer</p>
+            </div>
+          </div>
+          <div class="exp__author aurelien">
+            <div class="author__img"></div>
+            <div class="author__id">
+              <h6 class="author__name">Aurélien Marast</h6>
+              <p class="author__job">UI Designer</p>
+            </div>
+          </div>
+          <div class="exp__author lv">
+            <div class="author__img"></div>
+            <div class="author__id">
+              <h6 class="author__name">Louis-Victor Morgaut</h6>
+              <p class="author__job">UI Designer</p>
+            </div>
+          </div>
         </div>
         <div class="exp__projectContext">
           <div class="exp__concept">
             <h5 class="exp__conceptTitle">Concept</h5>
-            <p class="exp__conceptText">Drinking vinegar meggings microdosing, fashion axe YOLO tilde meditation poutine. Humblebrag mustache street art, swag disrupt waistcoat tattooed chambray roof party art party health goth. Pitchfork franzen listicle meditation 3 wolf moon scenester tilde. Selfies hoodie chambray post-ironic, cardigan echo park you probably haven’t heard of them chicharrones XOXO 3 wolf moon lumbersexual williamsburg microdosing umami. Selfies echo park farm-to-table blue bottle austin. Franzen marfa pug, kickstarter sartorial tacos shabby chic whatever ethical pickled selfies beard before they sold out. Art party blue bottle retro venmo skateboard pickled.</p>
+            <p class="exp__conceptText">Nous sommes quatre Héticiens désireux de partager notre passion pour les nouvelles technologies et l’avenir de notre planète. Dans ce sens, nous avons conçu une expérience immersive et éducative autour de la planète rouge. Une expérience inédite qui permet de découvrir la terraformation de Mars étape par étape sous un angle novateur. Nous nous sommes inspirés du travail d’Elon Musk avec Space X pour représenter la colonisation de Mars.</p>
           </div>
           <div class="exp__mission">
             <h5 class="exp__missionTitle">Mars One : la mission</h5>
-            <p class="exp__missionText">Drinking vinegar meggings microdosing, fashion axe YOLO tilde meditation poutine. Humblebrag mustache street art, swag disrupt waistcoat tattooed chambray roof party art party health goth. Pitchfork franzen listicle meditation 3 wolf moon scenester tilde. Selfies hoodie chambray post-ironic, cardigan echo park you probably.</p>
+            <p class="exp__missionText">Space X conçoit, fabrique et envoie des fusées et des vaisseaux spatiaux sur Mars. L’entreprise a été fondée en 2002 avec pour objectif de révolutionner la technologie spatiale. Son but ultime est de donner la possibilité à l’Homme de vivre sur d’autres planètes que la Terre.</p>
           </div>
         </div>
       </div>

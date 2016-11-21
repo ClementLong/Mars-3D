@@ -30,7 +30,29 @@ body {
   }
 }
 
+.greatTitle {
+  position: relative;
+  z-index: 0;
+
+  &::before {
+    content: '';
+    height: 10px;
+    width: 100%;
+    z-index: -5;
+    background-color: $brandPrimary;
+
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+
+    @include adapt(1080px) {
+      bottom: 6px;
+    }
+  }
+}
+
 @import 'header';
 @import 'footer';
-@import 'introduction';
+@import 'intro';
 @import 'exp';
+@import 'result';
