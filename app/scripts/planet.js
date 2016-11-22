@@ -129,7 +129,6 @@ planet.render = () => {
     requestAnimationFrame( render )
 
     planet.marsMesh.rotation.y += planet.rotationVariationY
-    planet.marsMesh.rotation.x += planet.rotationVariationX
 
     planet.renderer.render(planet.scene, planet.camera)
   }
