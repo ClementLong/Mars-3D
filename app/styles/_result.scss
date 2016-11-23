@@ -37,6 +37,11 @@
     }
   }
 
+  .exp__infosStatut {
+    color: $brandPrimary;
+    font-weight: 700;
+  }
+
   .exp__infosJourney::before, .exp__infosPopulation:before {
     @include adapt(1080px) {
       position: absolute;

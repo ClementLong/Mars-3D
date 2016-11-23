@@ -32,6 +32,7 @@ quizz.init = () => {
   quizz.update()
 
   quizz.yes.addEventListener('mousedown', () => {
+    quizz.response.push(true)
     if(quizz.state > 3) {
       nav.result();
       return false;
@@ -39,10 +40,10 @@ quizz.init = () => {
     document.querySelector('.planet__three' + quizz.state).remove()
     planet.initPlanet(quizz.state + 1)
     quizz.update()
-    quizz.response.push(true)
   })
 
   quizz.no.addEventListener('click', () => {
+    quizz.response.push(false)
     if(quizz.state > 3) {
       nav.result();
       return false;
@@ -50,7 +51,6 @@ quizz.init = () => {
     document.querySelector('.planet__three' + quizz.state).remove()
     planet.initPlanet(quizz.state + 1)
     quizz.update()
-    quizz.response.push(false)
   })
 }
 
@@ -107,7 +107,7 @@ planet.renderPosition = () => {
 planet.textureLoader = (theMapPath, theBmapPath) => {
   const theMap = new planet.three.TextureLoader().load(theMapPath)
   const theBmap = new planet.three.TextureLoader().load(theBmapPath)
-  const geometry  = new planet.three.SphereGeometry(2, 32, 32)
+  const geometry  = new planet.three.SphereGeometry(2.8, 32, 32)
   const material  = new planet.three.MeshPhongMaterial({
     map : theMap,
     specular: 0x22222,
@@ -163,7 +163,7 @@ planet.atmosphere = () => {
 
   // const theMap = new planet.three.TextureLoader().load('./images/cloudmap.jpg')
   // const theMapTransparency = new planet.three.TextureLoader().load('./images/cloudmaptr.jpg')
-  const geometry  = new planet.three.SphereGeometry(2.1, 32, 32)
+  const geometry  = new planet.three.SphereGeometry(2.9, 32, 32)
   const material  = new planet.three.MeshPhongMaterial({
     map         : new planet.three.Texture(canvasResult),
     side        : planet.three.DoubleSide,
@@ -187,9 +187,10 @@ planet.render = () => {
 }
 
 planet.backgroundStar = () => {
+  const theMap = new planet.three.TextureLoader().load('../app/images/mars/stars.jpg')
   const geometry  = new planet.three.SphereGeometry(90, 32, 32)
   const material  = new planet.three.MeshBasicMaterial()
-  material.map   = planet.three.ImageUtils.loadTexture('../app/images/mars/stars.jpg')
+  material.map   = theMap
   material.side  = planet.three.BackSide
   const mesh  = new planet.three.Mesh(geometry, material)
   planet.scene.add(mesh)
@@ -236,6 +237,31 @@ planet.initPlanet = (state) => {
   planet.rotation()
 }
 
+/////////////
+// Result //
+////////////
+
+const result = {}
+
+result.init = () => {
+  result.response = quizz.response
+  result.expResultTitle = document.querySelector('.exp__resultTitle')
+  result.expInfosStatut = document.querySelector('.exp__infosStatut')
+  result.go = 4
+
+  for(let i = 0; i < 4; i++) {
+    if(result.response[i] == true) {
+      result.go = i
+      break
+    }
+  }
+
+  console.log(result.go)
+  console.log(quizz.answer.questions)
+  result.expResultTitle.innerHTML = quizz.answer.questions[result.go].year
+  result.expInfosStatut.innerHTML = quizz.answer.questions[result.go].result
+}
+
 ////////////////
 // Navigation //
 ////////////////
@@ -260,15 +286,16 @@ nav.init = () => {
   })
   nav.button.next.addEventListener('click', () => {
     nav.scene.exp_intro.classList.remove('block')
-    nav.scene.exp_quizz.classList.add('flex')
+    nav.scene.exp_quizz.classList.add('block')
     planet.initPlanet(1)
     quizz.init()
   })
 }
 
 nav.result = () => {
-  nav.scene.exp_quizz.classList.remove('flex')
+  nav.scene.exp_quizz.classList.remove('block')
   nav.scene.result.classList.add('block')
+  result.init()
 }
 
 nav.init();
