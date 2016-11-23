@@ -1,13 +1,11 @@
 .intro {
-  padding-top: 20px;
-  // min-height: 100vh;
-
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: stretch;
   text-align: center;
+  min-height: 100vh;
 }
 
 .intro__infos {
@@ -68,19 +66,29 @@
 
 .intro__btn {
   @extend .btn;
+  cursor: pointer;
 
   a::after {
     content: '';
     height: 2.6em;
     width: 2.6em;
     background-color: $secondaryBackground;
-    border-radius: 100%;
+    border-radius: 140px;
 
     position: absolute;
     top: 50%;
     left: 0.4em;
+    z-index: -1;
 
     transform: translateY(-50%);
+    transition: 0.3s;
+  }
+}
+
+.intro__btn:hover {
+  a::after {
+    width: calc(100% - 1.3rem);
+    transition: 0.3s;
   }
 }
 

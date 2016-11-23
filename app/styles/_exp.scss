@@ -1,14 +1,14 @@
 .exp {
-  padding-top: 20px;
   text-align: center;
 }
 
 .exp__intro {
+  min-height: 100vh;
   margin: 0 auto;
   padding: 0 15px;
   max-width: 600px;
   @include adapt(1080px) {
-    padding: 50px 50px 70px 50px;
+    padding: 0px 50px 0px;
     background-color: $secondaryBackground;
   }
 }
@@ -36,9 +36,14 @@
   margin-left: 15px;
   margin-right: 15px;
   @extend .btn;
+
+  a {
+    cursor: pointer;
+  }
 }
 
 .exp__quizz {
+  min-height: 100vh;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -89,10 +94,6 @@
   margin-top: 30px;
   text-align: center;
 
-  @include adapt(1080px) {
-    text-align: left;
-  }
-
   .yes, .no {
     position: relative;
     display: inline-block;
@@ -101,6 +102,7 @@
     width: 60px;
     background-color: #fff;
     border-radius: 50%;
+    cursor: pointer;
 
     a {
       @include paragraphTitle(14px);

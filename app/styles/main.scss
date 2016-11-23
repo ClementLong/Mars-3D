@@ -10,7 +10,6 @@
 
 body {
   margin: 0 auto;
-  max-width: 1440px;
 }
 
 .btn {
@@ -27,6 +26,7 @@ body {
     text-transform: uppercase;
     background-color: $brandPrimary;
     border-radius: 100px;
+    z-index: 2;
   }
 }
 
@@ -56,3 +56,36 @@ body {
 @import 'intro';
 @import 'exp';
 @import 'result';
+
+//
+// .result, .intro, .exp {
+//   position: absolute;
+//   top : 0;
+//   left: 0;
+// }
+
+.result, .exp__intro, .exp__quizz {
+  display: none !important;
+}
+
+.block {
+  display: block !important;
+}
+
+.flex {
+  display: flex !important;
+}
+
+.none {
+  display: none !important;
+}
+
+.exp__planet {
+  position: relative;
+}
+
+.planet__three1, .planet__three2, .planet__three3, .planet__three4 {
+  position: absolute;
+  height: 100vh;
+  width: 600px;
+}
