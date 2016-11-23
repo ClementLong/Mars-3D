@@ -155,9 +155,6 @@ planet.atmosphere = () => {
 	}, false);
 	imageMap.src	= './images/cloudmap.jpg'
 
-
-  // const theMap = new planet.three.TextureLoader().load('./images/cloudmap.jpg')
-  // const theMapTransparency = new planet.three.TextureLoader().load('./images/cloudmaptr.jpg')
   const geometry  = new planet.three.SphereGeometry(2.9, 32, 32)
   const material  = new planet.three.MeshPhongMaterial({
     map         : new planet.three.Texture(canvasResult),
@@ -241,6 +238,8 @@ result.init = () => {
   result.response = quizz.response
   result.expResultTitle = document.querySelector('.exp__resultTitle')
   result.expInfosStatut = document.querySelector('.exp__infosStatut')
+  result.expInfosPopulation = document.querySelector('.exp__infosPopulation')
+  result.expInfosJourney = document.querySelector('.exp__infosJourney')
   result.go = 4
 
   for(let i = 0; i < 4; i++) {
@@ -250,10 +249,12 @@ result.init = () => {
     }
   }
 
-  console.log(result.go)
-  console.log(quizz.answer.questions)
   result.expResultTitle.innerHTML = quizz.answer.questions[result.go].year
   result.expInfosStatut.innerHTML = quizz.answer.questions[result.go].result
+  result.expInfosPopulation.innerHTML = 'Mars comptera ' + quizz.answer.questions[result.go].population + ' habs'
+  result.expInfosJourney.innerHTML = 'Votre voyage durera ' + quizz.answer.questions[result.go].time
+  result.expInfosPopulation.setAttribute('data-pop', quizz.answer.questions[result.go].population + ' habs')
+  result.expInfosJourney.setAttribute('data-journey', quizz.answer.questions[result.go].time)
 }
 
 ////////////////
