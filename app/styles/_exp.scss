@@ -43,6 +43,14 @@
 
   a {
     cursor: pointer;
+    background-color: transparent;
+    border: 3px solid $brandPrimary;
+    transition: border-color 0.320s ease-out, background-color 0.320s ease-out;
+
+    &:hover, &:focus {
+      border: 3px solid transparent;
+      background-color: $brandPrimary;
+    }
   }
 }
 
