@@ -9,8 +9,12 @@
   max-width: 600px;
   @include adapt(1080px) {
     padding: 0px 50px 0px;
-    background-color: $secondaryBackground;
   }
+}
+
+.exp__introContainer{
+  padding: 40px 50px 40px;
+  background-color: $secondaryBackground;
 }
 
 .exp__introTitle {
@@ -39,27 +43,41 @@
 
   a {
     cursor: pointer;
+    background-color: transparent;
+    border: 3px solid $brandPrimary;
+    transition: border-color 0.320s ease-out, background-color 0.320s ease-out;
+
+    &:hover, &:focus {
+      border: 3px solid transparent;
+      background-color: $brandPrimary;
+    }
   }
 }
 
-.exp__quizz {
+.exp__quizzContainer {
   min-height: 100vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
 
   @include adapt(1080px) {
+    margin-top: -150px;
     flex-direction: row;
   }
 }
 
 .exp__planet {
-  min-height: 320px;
-  background-color: $brandPrimary;
+  min-height: 500px;
+  background-color: transparent;
   @include adapt(1080px) {
     min-height: 500px;
-    min-width: 600px;
+    min-width: 700px;
   }
+}
+
+.exp__questionsContainer {
+  align-content: center;
 }
 
 .exp__questions {

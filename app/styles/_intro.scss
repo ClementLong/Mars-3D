@@ -70,14 +70,14 @@
 
   a::after {
     content: '';
-    height: 2.6em;
-    width: 2.6em;
+    height: 3em;
+    width: 3em;
     background-color: $secondaryBackground;
     border-radius: 140px;
 
     position: absolute;
     top: 50%;
-    left: 0.4em;
+    left: 0.2em;
     z-index: -1;
 
     transform: translateY(-50%);
@@ -87,41 +87,41 @@
 
 .intro__btn:hover {
   a::after {
-    width: calc(100% - 1.3rem);
+    width: calc(100% - 0.6rem);
     transition: 0.3s;
   }
 }
 
 .intro__mars {
   position: relative;
-  height: 0px;
+  height: 150px;
   overflow: hidden;
 
-  // &::after {
-  //   content: '';
-  //   bottom: 0;
-  //   right: 0;
-  //   position: absolute;
-  //   height: 100%;
-  //   width: 100%;
-  //   // background-color: $brandPrimary;
-  //   // background-image: url('../images/mars.png');
-  //   background-size: cover;
-  // }
-  //
-  // @include adapt(1080px) {
-  //   position: absolute;
-  //   bottom: 0;
-  //   right: 0px;
-  //   height: 800px;
-  //   width: 800px;
-  //
-  //   &::after {
-  //     background-size: cover;
-  //     background-repeat: no-repeat;
-  //     background-position: bottom;
-  //
-  //     transform: translate(200px, 200px);
-  //   }
-  // }
+  &::after {
+    content: '';
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    // background-color: $brandPrimary;
+    background-image: url('../app/images/mars.png');
+    background-size: cover;
+  }
+
+  @include adapt(1080px) {
+    position: absolute;
+    bottom: 0;
+    right: 0px;
+    height: 800px;
+    width: 800px;
+
+    &::after {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: bottom;
+
+      transform: translate(200px, 200px);
+    }
+  }
 }

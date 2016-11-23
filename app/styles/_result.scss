@@ -171,6 +171,9 @@
 }
 
 .exp__project {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
   @include adapt(1080px) {
     display: flex;
     flex-wrap: nowrap;
@@ -187,6 +190,12 @@
 
   .exp__author {
     margin-bottom: 20px;
+
+    &.juliette .author__img { background-image: url('../app/images/juliette.jpg'); }
+    &.clement .author__img { background-image: url('../app/images/clement.jpg'); }
+    &.yann .author__img { background-image: url('../app/images/yann.jpg'); }
+    &.aurelien .author__img { background-image: url('../app/images/aurelien.jpg'); }
+    &.lv .author__img { background-image: url('../app/images/lv.jpg'); }
   }
 
   .author__img {
@@ -197,6 +206,8 @@
     float: left;
     clear: both;
     margin-right: 15px;
+
+    background-size: cover;
   }
 
   .author__id {
@@ -245,6 +256,9 @@
 }
 
 .exp__more {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
   text-align: left;
   padding: 0 20px;
 
@@ -275,6 +289,22 @@
   .moreArticle__img {
     margin-bottom: -15px;
     height: 200px;
-    background-color: $brandPrimary;
+    // background-color: $brandPrimary;
+    background-size: cover;
+    background-position: center;
+    border: 5px solid $secondaryBackground;
+
+    &.nasa {
+      background-image: url('../app/images/mars-nasa.jpg');
+      background-position: top;
+    }
+
+    &.spacex {
+      background-image: url('../app/images/space-x.jpg');
+    }
+
+    &.national {
+      background-image: url('../app/images/rover-2020.jpg');
+    }
   }
 }
