@@ -1,4 +1,6 @@
-// Quizz
+///////////
+// Quizz //
+///////////
 
 const quizz = {}
 
@@ -50,7 +52,10 @@ quizz.init = () => {
   })
 }
 
-// Planet
+////////////
+// Planet //
+////////////
+
 const planet = {}
 
 // Init three.js requirement
@@ -191,6 +196,13 @@ planet.initPlanet = (state) => {
   // Init scene & camera
   planet.initCamera()
 
+  const geometry  = new planet.three.SphereGeometry(90, 32, 32)
+  const material  = new planet.three.MeshBasicMaterial()
+  material.map   = planet.three.ImageUtils.loadTexture('../app/images/mars/star.jpg')
+  material.side  = planet.three.BackSide
+  const mesh  = new planet.three.Mesh(geometry, material)
+  planet.scene.add(mesh)
+
   // Init Sphere
   planet.scene.add( new planet.three.HemisphereLight( 0x443333, 0x111122 ) )
 
@@ -213,19 +225,14 @@ planet.initPlanet = (state) => {
     planet.atmosphere()
   }
 
-  const geometry  = new planet.three.SphereGeometry(90, 32, 32)
-  const material  = new planet.three.MeshBasicMaterial()
-  material.map   = planet.three.ImageUtils.loadTexture('../app/images/mars/star.jpg')
-  material.side  = planet.three.BackSide
-  const mesh  = new planet.three.Mesh(geometry, material)
-
-
   planet.render()
 
   planet.rotation()
 }
 
-// Navigation
+////////////////
+// Navigation //
+////////////////
 
 const nav = {}
 
