@@ -34,12 +34,12 @@ planet.InitSpotLight = () => {
 
 planet.rotation = () => {
   const mouseEvent = planet.section.addEventListener('mousemove', (e) => {
-    if( (window.innerWidth/2) < e.clientX) {
+    if( (planet.section.offsetWidth/2) < e.clientX) {
       planet.rotationVariationY = 0.001
     } else {
       planet.rotationVariationY = -0.001
     }
-    if( (window.innerHeight/2) < e.clientY) {
+    if( (planet.section.offsetWidth/2) < e.clientY) {
       planet.rotationVariationX = 0.001
     } else {
       planet.rotationVariationX = -0.001
@@ -48,7 +48,6 @@ planet.rotation = () => {
 }
 
 planet.renderPosition = () => {
-  console.log(planet.section.offsetWidth)
   planet.renderer.setSize( planet.section.offsetWidth , planet.section.offsetHeight )
   planet.section.appendChild( planet.renderer.domElement )
 }
@@ -62,7 +61,7 @@ planet.textureLoader = (theMapPath, theBmapPath) => {
     specular: 0x222222,
     shininess: 10,
     bumpMap : theBmap,
-    bumpScale	: 0.02,
+    bumpScale	: 0.04,
   })
 
   planet.marsMesh = new planet.three.Mesh(geometry, material)
@@ -166,4 +165,4 @@ planet.initPlanet = (state) => {
   planet.rotation()
 }
 
-planet.initPlanet(1)
+planet.initPlanet(3)

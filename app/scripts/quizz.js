@@ -21,12 +21,8 @@ quizz.update = () => {
   quizz.expQuestion.innerHTML = currentQuestion.question
 
   if(quizz.state > 3) {
-    quizz.end()
+    console.log('finito')
   }
-}
-
-quizz.end = () => {
-
 }
 
 quizz.init = () => {
