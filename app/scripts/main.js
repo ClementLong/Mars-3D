@@ -15,6 +15,7 @@ quizz.update = () => {
 
   quizz.expConext.innerHTML = currentQuestion.context
   quizz.expQuestion.innerHTML = currentQuestion.question
+  quizz.expQuestionTitle.innerHTML = currentQuestion.date
 
   quizz.state++
 }
@@ -24,6 +25,7 @@ quizz.init = () => {
   quizz.no = document.querySelector('.no')
   quizz.expConext = document.querySelector('.exp__context')
   quizz.expQuestion = document.querySelector('.exp__question')
+  quizz.expQuestionTitle = document.querySelector('.exp__questionsTitle')
   quizz.response = []
   quizz.state = 0
 
@@ -184,6 +186,15 @@ planet.render = () => {
   render()
 }
 
+planet.backgroundStar = () => {
+  const geometry  = new planet.three.SphereGeometry(90, 32, 32)
+  const material  = new planet.three.MeshBasicMaterial()
+  material.map   = planet.three.ImageUtils.loadTexture('../app/images/mars/stars.jpg')
+  material.side  = planet.three.BackSide
+  const mesh  = new planet.three.Mesh(geometry, material)
+  planet.scene.add(mesh)
+}
+
 planet.initPlanet = (state) => {
   planet.three = require('three')
   planet.scene = new planet.three.Scene()
@@ -196,12 +207,7 @@ planet.initPlanet = (state) => {
   // Init scene & camera
   planet.initCamera()
 
-  const geometry  = new planet.three.SphereGeometry(90, 32, 32)
-  const material  = new planet.three.MeshBasicMaterial()
-  material.map   = planet.three.ImageUtils.loadTexture('../app/images/mars/star.jpg')
-  material.side  = planet.three.BackSide
-  const mesh  = new planet.three.Mesh(geometry, material)
-  planet.scene.add(mesh)
+  planet.backgroundStar()
 
   // Init Sphere
   planet.scene.add( new planet.three.HemisphereLight( 0x443333, 0x111122 ) )
