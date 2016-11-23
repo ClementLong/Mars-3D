@@ -24,4 +24,4 @@ Run building
 npm start
 ```
 
-Run on server MAMP or Node (for crossdomain error)
+Run on server MAMP

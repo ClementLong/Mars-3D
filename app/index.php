@@ -84,23 +84,23 @@
         <h5 class="result__graphSubtitle">Découvrez les résultats des autres explorateurs</h5>
         <div class="result__graphZone">
           <div id="martien" class="category">
-            <div data-value="25%" class="category__value"></div>
+            <div data-value="12%" style="height: calc(12 * 10px);" class="category__value"></div>
             <div class="category__name">Martien</div>
           </div>
           <div id="pionner" class="category">
-            <div data-value="30%" class="category__value"></div>
+            <div data-value="20%" style="height: calc(20 * 10px);" class="category__value"></div>
             <div class="category__name">Pionnier</div>
           </div>
           <div id="aventurier" class="category">
-            <div data-value="20%" class="category__value"></div>
+            <div data-value="25%" style="height: calc(25 * 10px);" class="category__value"></div>
             <div class="category__name">Aventurier</div>
           </div>
           <div id="touriste" class="category">
-            <div data-value="10%" class="category__value"></div>
+            <div data-value="30%" style="height: calc(30 * 10px);" class="category__value"></div>
             <div class="category__name">Touriste</div>
           </div>
           <div id="terrien" class="category">
-            <div data-value="5%" class="category__value"></div>
+            <div data-value="8%" style="height: calc(8 * 10px);" class="category__value"></div>
             <div class="category__name">Terrien</div>
           </div>
         </div>

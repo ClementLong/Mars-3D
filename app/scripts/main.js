@@ -91,11 +91,6 @@ planet.rotation = () => {
     } else {
       planet.rotationVariationY = -0.001
     }
-    if( (planet.section.offsetWidth/2) < e.clientY) {
-      planet.rotationVariationX = 0.001
-    } else {
-      planet.rotationVariationX = -0.001
-    }
   })
 }
 
@@ -203,7 +198,6 @@ planet.initPlanet = (state) => {
   planet.camera = new planet.three.PerspectiveCamera( 75, planet.section.offsetWidth/planet.section.offsetHeight, 0.1, 1000 )
   planet.spotLight = new planet.three.SpotLight( 0xffffbb, 1.3 )
   planet.rotationVariationY = 0.001
-  planet.rotationVariationX = 0.001
   planet.renderer = new planet.three.WebGLRenderer()
   // Init scene & camera
   planet.initCamera()
