@@ -1,0 +1,5 @@
+@mixin adapt($media) {
+  @media (min-width: #{$media}) {
+    @content;
+  }
+}

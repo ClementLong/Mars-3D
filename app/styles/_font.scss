@@ -41,7 +41,7 @@
   font-style: normal;
 }
 
-@mixin sectionTitle($size: 72px, $color: #fff) {
+@mixin sectionTitle($size: 72px, $color: $white) {
   margin-bottom: 0.1em;
   color: $color;
   font-family: 'aileronsRegular';
@@ -51,7 +51,7 @@
   line-height: 1em;
 }
 
-@mixin sectionSubtitle($size: 18px, $color: #efefef) {
+@mixin sectionSubtitle($size: 18px, $color: $white) {
   margin-bottom: 2em;
   color: $color;
   font-family: 'montserratLight';
@@ -61,7 +61,7 @@
   line-height: 1.2em;
 }
 
-@mixin paragraphTitle($size: 20px, $color: #fff) {
+@mixin paragraphTitle($size: 20px, $color: $white) {
   margin-bottom: 0.8em;
   color: $color;
   font-family: 'montserratMedium';
@@ -71,22 +71,10 @@
   line-height: 1.4em;
 }
 
-@mixin paragraphText($size: 16px, $color: #fff) {
+@mixin paragraphText($size: 16px, $color: $white) {
   color: $color;
   font-family: 'andalemonoRegular', monospace;
   font-size: $size;
   letter-spacing: -0.08em;
   line-height: 1.5em;
-}
-
-body {
-  background-color: $background;
-  color: #fff;
-  font-size: 16px;
-  font-family: Helvetica, Arial, sans-serif;
-  line-height: 1.4em;
-}
-
-a {
-  color: inherit;
 }

@@ -1,100 +1,11 @@
 @import 'reset';
 @import 'color';
 @import 'font';
-
-@mixin adapt($media) {
-  @media (min-width: #{$media}) {
-    @content;
-  }
-}
-
-body {
-  margin: 0 auto;
-}
-
-.btn {
-  margin: 30px 0 80px 0;
-  display: inline-block;
-
-  a {
-    position: relative;
-    display: inline-block;
-    padding: 1em 5em;
-    color: #fff;
-    font-family: 'montserratMedium';
-    letter-spacing: 0.125em;
-    text-transform: uppercase;
-    background-color: $brandPrimary;
-    border-radius: 100px;
-    z-index: 2;
-  }
-}
-
-.greatTitle {
-  position: relative;
-  z-index: 0;
-
-  &::before {
-    content: '';
-    height: 10px;
-    width: 100%;
-    z-index: -5;
-    background-color: $brandPrimary;
-
-    position: absolute;
-    bottom: 2px;
-    left: 0;
-
-    @include adapt(1080px) {
-      bottom: 6px;
-    }
-  }
-}
-
+@import 'mixin';
+@import 'uikit';
 @import 'header';
 @import 'footer';
 @import 'intro';
 @import 'exp';
 @import 'result';
-
-//
-// .result, .intro, .exp {
-//   position: absolute;
-//   top : 0;
-//   left: 0;
-// }
-
-
-.result, .exp__intro, .exp__quizz {
-  display: none !important;
-}
-
-.block {
-  display: block !important;
-}
-
-.flex {
-  display: flex !important;
-}
-
-.none {
-  display: none !important;
-}
-
-.exp__planet {
-  position: relative;
-}
-
-.planet__three1, .planet__three2, .planet__three3, .planet__three4 {
-  position: absolute;
-  height: 100vh;
-  width: 600px;
-}
-
-.share__twitter {
-  width: 100px !important;
-  height: 40px !important;
-  font-size: 2rem !important;
-  color: red !important;
-  background-color: orange;
-}
+@import 'jsrequire';
