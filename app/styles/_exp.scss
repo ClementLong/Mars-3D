@@ -9,8 +9,12 @@
   max-width: 600px;
   @include adapt(1080px) {
     padding: 0px 50px 0px;
-    background-color: $secondaryBackground;
   }
+}
+
+.exp__introContainer{
+  padding: 40px 50px 40px;
+  background-color: #3C3D48;
 }
 
 .exp__introTitle {
@@ -55,11 +59,15 @@
 
 .exp__planet {
   min-height: 320px;
-  background-color: $brandPrimary;
+  background-color: black;
   @include adapt(1080px) {
     min-height: 500px;
     min-width: 600px;
   }
+}
+
+.exp__questionsContainer {
+  align-content: center;
 }
 
 .exp__questions {
