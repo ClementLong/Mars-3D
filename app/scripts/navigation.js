@@ -18,12 +18,12 @@ nav.init = () => {
   })
   nav.button.next.addEventListener('click', () => {
     nav.scene.exp_intro.classList.remove('block')
-    nav.scene.exp_quizz.classList.add('flex')
+    nav.scene.exp_quizz.classList.add('block')
     const Planet = require('./planet.js')
     const Quizz = require('./quizz.js')
   })
   nav.button.result.addEventListener('click', () => {
-    nav.scene.exp_quizz.classList.remove('flex')
+    nav.scene.exp_quizz.classList.remove('block')
     nav.scene.result.classList.add('block')
   })
 }

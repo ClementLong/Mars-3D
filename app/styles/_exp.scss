@@ -14,7 +14,7 @@
 
 .exp__introContainer{
   padding: 40px 50px 40px;
-  background-color: #3C3D48;
+  background-color: $secondaryBackground;
 }
 
 .exp__introTitle {
@@ -46,23 +46,25 @@
   }
 }
 
-.exp__quizz {
+.exp__quizzContainer {
   min-height: 100vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
 
   @include adapt(1080px) {
+    margin-top: -150px;
     flex-direction: row;
   }
 }
 
 .exp__planet {
-  min-height: 320px;
-  background-color: black;
+  min-height: 500px;
+  background-color: transparent;
   @include adapt(1080px) {
     min-height: 500px;
-    min-width: 600px;
+    min-width: 700px;
   }
 }
 
